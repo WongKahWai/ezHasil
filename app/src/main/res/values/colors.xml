@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#547df9</color>
+    <color name="colorPrimaryDark">#4c72ed</color>
+    <color name="colorAccent">#4aaba0</color>
+
+    //Pink
+    <color name="pinkDark">#d81b60</color>
+    <color name="pinkLight">#e91e63</color>
+    //Purple
+    <color name="purpleDark">#9019ad</color>
+    <color name="purpleLight">#9d1bb2</color>
+    //Blue
+    <color name="blueDark">#4c72ed</color>
+    <color name="blueLight">#547df9</color>
+    //DarkGreen
+    <color name="darkGreenDark">#FF306C5D</color>
+    <color name="darkGreenLight">#4aaba0</color>
+    //Green
+    <color name="greenDark">#1c9d17</color>
+    <color name="greenLight">#20b11d</color>
+    //LightGreen
+    <color name="lightGreenDark">#1c9d17</color>
+    <color name="lightGreenLight">#20b11d</color>
+    //Amber
+    <color name="amberDark">#ffb500</color>
+    <color name="amberLight">#ffc300</color>
+    //Deep Orange
+    <color name="deepOrangeDark">#f4511e</color>
+    <color name="deepOrangeLight">#ff5722</color>
+    //Gray
+    <color name="grayLight">#aeaeae</color>
+    <color name="grayDark">#313131</color>
+    <color name="graybackground">#f1f5f7</color>
+    //Black
+    <color name="black">#0a0a0a</color>
+    //White
+    <color name="white">#FFFFFFFF</color>
+
+</resources>

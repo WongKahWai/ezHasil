@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:fontWeight="400"
+        android:font="@font/painter" />
+    <font
+        android:fontWeight="400"
+        android:font="@font/heiti" />
+
+    //GOTHIC font-family
+    <font
+        android:font="@font/gothic"/>
+</font-family>

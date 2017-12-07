@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "127421134982",
+    "firebase_url": "https://ezhasil-c68c9.firebaseio.com",
+    "project_id": "ezhasil-c68c9",
+    "storage_bucket": "ezhasil-c68c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127421134982:android:1e57f6e52d32aa49",
+        "android_client_info": {
+          "package_name": "com.example.kahwai.ezhasil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127421134982-gc6fmnffet1vatvgri7ga08vnosqc773.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfJHTwNmxbAeIU5YyKoUol0En0N9hTLss"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

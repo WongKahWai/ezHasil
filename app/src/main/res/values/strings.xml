@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">ezHasil</string>
+
+    // Authentication
+    <string name="action_sign_in_short">Register</string>
+    <string name="email">Email</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="change_email">Change Email</string>
+    <string name="change_password">Change Password</string>
+    <string name="send_password_reset_email">Send Password reset email</string>
+    <string name="remove_user">Remove user</string>
+    <string name="new_pass">New Password</string>
+    <string name="title_activity_profile">Firebase</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_link_to_register">Not a member? Get registered in Firebase now!</string>
+    <string name="btn_link_to_login">Already registered. Login Me!</string>
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
+    <string name="btn_forgot_password">Forgot your password?</string>
+    <string name="btn_reset_password">Reset Password</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="hint_new_email">New Email</string>
+    <string name="btn_change">Change</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_remove">Remove</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="lbl_forgot_password">Forgot password?</string>
+    <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!--Account Activity-->
+    <string name="acc_full_name">Full name as in MyKad</string>
+    <string name="acc_mykad">MyKad No. (without \'-\')</string>
+    <string name="acc_income_tax_no_prompt">Income Tax No.</string>
+    <string name="acc_address">Address</string>
+    <string name="acc_postal_code">Postcode</string>
+    <string name="acc_home_phone">Home - Phone No.(without \'-\')</string>
+    <string name="acc_mobile_phone">Mobile - Phone No.(without \'-\')</string>
+    <string name="acc_email">Email</string>
+    <string name="acc_gender_prompt">Gender</string>
+    <string-array name="gender_arrays">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string name="acc_btn_save">Save</string>
+
+    <!--Report View Select Activity-->
+    <string name="rps_form_type_prompt">Form Type</string>
+    <string-array name="form_type_arrays">
+        <item>B</item>
+        <item>BE</item>
+    </string-array>
+    <string name="rps_year_of_assessment_prompt">Year of Assessment</string>
+    <string-array name="year_of_assessment_arrays">
+        <item>2012</item>
+        <item>2013</item>
+        <item>2014</item>
+        <item>2015</item>
+        <item>2016</item>
+    </string-array>
+    <string name="rps_btn_next">Next</string>
+</resources>

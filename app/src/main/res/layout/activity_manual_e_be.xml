@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context="com.example.kahwai.ezhasil.Manual_eBE">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.codeisall.expandablelayout.MainActivity">
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/manual_e_be_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/gothic_bold"
+                android:text="e-BE"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/manual_e_be_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/gothic_bold"
+                android:text="Year of Assessment"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/manual_e_be_title" />
+
+            <TextView
+                android:id="@+id/manual_e_be_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/gothic"
+                android:text="2016"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/manual_e_be_title2" />
+
+        </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/expandableButton1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@color/pinkDark"
+                    android:drawableRight="@android:drawable/arrow_down_float"
+                    android:onClick="expandableButton1"
+                    android:paddingRight="10dp"
+                    android:text="Particular of Individual"
+                    android:textColor="#fff" />
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/expandableLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableButton1"
+                    android:background="@color/pinkLight"
+                    android:padding="16dp"
+                    app:ael_duration="400"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="300dp"
+                        android:text="Android is an open source and Linux-based Operating System for mobile devices such as smartphones and tablet computers. Android was developed by the Open Handset Alliance, led by Google, and other companies. The first beta version of the Android Software Development Kit (SDK) was released by Google in 2007 where as the first commercial version, Android 1.0, was released in September 2008."
+                        android:textColor="#FFFFFF" />
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                <Button
+                    android:id="@+id/expandableButton2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableLayout1"
+                    android:background="@color/blueDark"
+                    android:drawableRight="@android:drawable/arrow_down_float"
+                    android:onClick="expandableButton2"
+                    android:paddingRight="10dp"
+                    android:text="Statutory of Income/Total Income"
+                    android:textColor="#fff" />
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/expandableLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableButton2"
+                    android:background="@color/blueLight"
+                    android:padding="16dp"
+                    app:ael_duration="400"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Android Permission Model designed for preventing unauthorized access by third party application.Android applications must declare which permission they require after installation. At a time of android application installation android system display list of permissions which is required to install the current application. The user must decide to install an application or not."
+                        android:textColor="#FFFFFF" />
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                <Button
+                    android:id="@+id/expandableButton3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableLayout2"
+                    android:background="@color/darkGreenDark"
+                    android:drawableRight="@android:drawable/arrow_down_float"
+                    android:onClick="expandableButton3"
+                    android:paddingRight="10dp"
+                    android:text="Deduction / Rebate / Tax Deduction / Tax Relief"
+                    android:textColor="#fff" />
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/expandableLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableButton3"
+                    android:background="@color/darkGreenLight"
+                    android:padding="16dp"
+                    app:ael_duration="400"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="With the help of android debug bridge we can communicate with an emulator or connected physical android device because Android Debug Bridge is a command line tool. Android Debug Bridge is also known as ADB. ADB architecture is like client-server architecture with three components."
+                        android:textColor="#FFFFFF" />
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                <Button
+                    android:id="@+id/expandableButton4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableLayout3"
+                    android:background="@color/amberDark"
+                    android:drawableRight="@android:drawable/arrow_down_float"
+                    android:onClick="expandableButton4"
+                    android:paddingRight="10dp"
+                    android:text="Tax Summary"
+                    android:textColor="#fff" />
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/expandableLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableButton4"
+                    android:background="@color/amberLight"
+                    android:padding="16dp"
+                    app:ael_duration="400"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="The Open Handset Alliance (OHA) was formed in November 2007. The OHA is a business alliance comprised of many of the largest and most successful mobile companies on the planet. Its members include chip makers, handset manufacturers, software developers, and service providers.The entire mobile supply chain is well represented."
+                        android:textColor="#FFFFFF" />
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+            </LinearLayout>
+    </LinearLayout>
+</ScrollView>
