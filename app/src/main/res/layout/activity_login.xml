@@ -55,7 +55,7 @@
             android:layout_height="52dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="30dp"
-            android:background="@drawable/textbox_password"
+            android:background="@drawable/textbox_email"
             android:fontFamily="@font/gothic"
             android:hint="@string/hint_password"
             android:imeActionId="6"
