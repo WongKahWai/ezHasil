@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,13 +27,15 @@ public class SignUpActivity extends AppCompatActivity {
     private Button btnSignIn, btnSignUp, btnResetPassword;
     private ProgressBar progressBar;
     private DatabaseReference db;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        //Get Firebase auth instance
+        //Get Firebase database instance
+        auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance().getReference();
 
         btnSignIn = (Button) findViewById(R.id.sign_in_button);
@@ -60,10 +64,10 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String mykad = inputEmail.getText().toString().trim();
+                String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
 
-                if (TextUtils.isEmpty(mykad)) {
+                if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter myKad No.!", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -80,12 +84,12 @@ public class SignUpActivity extends AppCompatActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
 
+                DatabaseReference ref = db.child("Users");
                 Map<String, User> users = new HashMap<>();
-                users.put("970405145000", new User("970405145000", "abcde12345"));
+                ref.child(email).setValue(new User(email, password));
 
-                db.child("Users").setValue(users);
                 //create user
-               /* auth.createUserWithEmailAndPassword(email, password)
+                auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -95,14 +99,14 @@ public class SignUpActivity extends AppCompatActivity {
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
                                 if (!task.isSuccessful()) {
-                                    Toast.makeText(SignUpActivity.this, "Authentication failed." + task.getException(),
+                                    Toast.makeText(SignUpActivity.this, "Create account failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                                    startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                                     finish();
                                 }
                             }
-                        });*/
+                        });
 
             }
         });

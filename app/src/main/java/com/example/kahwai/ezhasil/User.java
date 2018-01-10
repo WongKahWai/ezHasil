@@ -1,6 +1,5 @@
 package com.example.kahwai.ezhasil;
 
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.IgnoreExtraProperties;
 
 /**
@@ -19,11 +18,8 @@ public class User {
     //extra details
     public String phoneNo, homePhoneNo, email;
     public String incomeTaxNo, passportNo, registeredPassport;
-    public String bankName, BankAccountNo;
+    public String bankName, bankAccountNo;
     public String address, postcode, city, state;
-
-    //database
-    private DatabaseReference mDatabase;
 
     public User(String icNo, String password){
         this.icNo = icNo;
@@ -92,7 +88,7 @@ public class User {
     }
 
     public String getBankAccountNo() {
-        return BankAccountNo;
+        return bankAccountNo;
     }
 
     public String getAddress() {
@@ -112,6 +108,7 @@ public class User {
     }
 
 
+
     //SETTERS
     public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
@@ -129,16 +126,14 @@ public class User {
         this.passportNo = passportNo;
     }
 
-    public void setRegisteredPassport(String registeredPassport) {
-        this.registeredPassport = registeredPassport;
-    }
+    public void setRegisteredPassport(String registeredPassport) { this.registeredPassport = registeredPassport; }
 
     public void setBankName(String bankName) {
         this.bankName = bankName;
     }
 
     public void setBankAccountNo(String bankAccountNo) {
-        BankAccountNo = bankAccountNo;
+        this.bankAccountNo = bankAccountNo;
     }
 
     public void setAddress(String address) {
@@ -156,11 +151,5 @@ public class User {
     public void setState(String state) {
         this.state = state;
     }
-
-
-    public void addUser(User user){
-        mDatabase.child("Users").child(user.getIcNo()).setValue(user);
-    }
-
 
 }
