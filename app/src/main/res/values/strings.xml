@@ -46,17 +46,18 @@
     <!--Account Activity-->
     <string name="acc_full_name">Full name as in MyKad</string>
     <string name="acc_mykad">MyKad No. (without \'-\')</string>
-    <string name="acc_income_tax_no_prompt">Income Tax No.</string>
-    <string name="acc_address">Address</string>
-    <string name="acc_postal_code">Postcode</string>
+    <string name="acc_Male">Male</string>
+    <string name="acc_Female">Female</string>
+    <string name="acc_dob">Date Of Birth (dd/MM/yyyy)</string>
     <string name="acc_home_phone">Home - Phone No.(without \'-\')</string>
     <string name="acc_mobile_phone">Mobile - Phone No.(without \'-\')</string>
     <string name="acc_email">Email</string>
-    <string name="acc_gender_prompt">Gender</string>
-    <string-array name="gender_arrays">
-        <item>Male</item>
-        <item>Female</item>
-    </string-array>
+    <string name="acc_passport">Current passport No.</string>
+    <string name="acc_registered_passport">Passport No. registered with LHDNM</string>
+    <string name="acc_income_tax_no">Income Tax No.</string>
+    <string name="acc_bank">Bank Name</string>
+    <string name="acc_bank_account_no">Bank Account No.</string>
+
     <string name="acc_btn_save">Save</string>
 
     <!--Report View Select Activity-->

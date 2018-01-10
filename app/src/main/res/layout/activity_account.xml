@@ -6,185 +6,25 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp">
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.kahwai.ezhasil.AccountActivity">
+        tools:context="com.example.kahwai.ezhasil.AccountActivity"
+        android:orientation="vertical">
 
         <fragment
+            android:name="com.example.kahwai.ezhasil.FragmentAccountEdit"
             android:id="@+id/fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         </fragment>
 
-        <TextView
-            android:id="@+id/report_view_select_desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/gothic_bold"
-            android:text="ACCOUNT SETTINGS"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/fragment_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/report_view_select_desc">
-
-            <EditText
-                android:id="@+id/full_name"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/textbox_email"
-                android:elevation="0dp"
-                android:fontFamily="@font/gothic"
-                android:hint="@string/acc_full_name"
-                android:inputType="text|textCapCharacters|textCapWords"
-                android:maxLines="1"
-                android:paddingLeft="20dp"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/ic_no"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/textbox_email"
-                android:fontFamily="@font/gothic"
-                android:hint="@string/acc_mykad"
-                android:maxLines="1"
-                android:paddingLeft="20dp"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/income_tax_no"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/textbox_email"
-                android:fontFamily="@font/gothic"
-                android:hint="@string/acc_income_tax_no_prompt"
-                android:maxLines="1"
-                android:paddingLeft="20dp"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/address"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/textbox_email"
-                android:ems="10"
-                android:fontFamily="@font/gothic"
-                android:hint="@string/acc_address"
-                android:inputType="textMultiLine"
-                android:paddingLeft="20dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/postal_code"
-                    android:layout_width="0dp"
-                    android:layout_height="52dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight=".25"
-                    android:background="@drawable/textbox_email"
-                    android:ems="10"
-                    android:fontFamily="@font/gothic"
-                    android:hint="@string/acc_postal_code"
-                    android:inputType="number"
-                    android:paddingLeft="20dp" />
-
-                <TextView
-                    android:id="@+id/city"
-                    android:layout_width="0dp"
-                    android:layout_height="52dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight=".50"
-                    android:ems="10"
-                    android:enabled="false"
-                    android:fontFamily="@font/gothic"
-                    android:inputType="textMultiLine"
-                    android:paddingLeft="20dp"
-                    android:textSize="8sp" />
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/home_phone"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/textbox_email"
-                android:elevation="0dp"
-                android:fontFamily="@font/gothic"
-                android:hint="@string/acc_home_phone"
-                android:inputType="number"
-                android:maxLines="1"
-                android:paddingLeft="20dp"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/mobile_phone"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/textbox_email"
-                android:elevation="0dp"
-                android:fontFamily="@font/gothic"
-                android:hint="@string/acc_mobile_phone"
-                android:inputType="number"
-                android:maxLines="1"
-                android:paddingLeft="20dp"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/textbox_email"
-                android:elevation="0dp"
-                android:fontFamily="@font/gothic"
-                android:hint="@string/acc_email"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:paddingLeft="20dp"
-                android:singleLine="true" />
-
-            <Button
-                android:id="@+id/btnSave"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/amberDark"
-                android:fontFamily="@font/gothic_bold"
-                android:text="@string/acc_btn_save"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-    </android.support.constraint.ConstraintLayout>
+            android:layout_height="match_parent"></FrameLayout>
+    </LinearLayout>
 
 </ScrollView>

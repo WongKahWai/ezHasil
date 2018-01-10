@@ -17,10 +17,26 @@ public class User {
     public String phoneNo, homePhoneNo, icNo;
     public String incomeTaxNo, passportNo, registeredPassport;
     public String bankName, bankAccountNo;
-    public String address, postcode, city, state;
 
     public User(String email){
         this.email = email;
+    }
+
+    public User(String email, String name, String citizen, String sex, String dob, String phoneNo, String homePhoneNo, String icNo,
+                String incomeTaxNo, String passportNo, String registeredPassport, String bankName, String bankAccountNo) {
+        this.email = email;
+        this.name = name;
+        this.citizen = citizen;
+        this.sex = sex;
+        this.dob = dob;
+        this.phoneNo = phoneNo;
+        this.homePhoneNo = homePhoneNo;
+        this.icNo = icNo;
+        this.incomeTaxNo = incomeTaxNo;
+        this.passportNo = passportNo;
+        this.registeredPassport = registeredPassport;
+        this.bankName = bankName;
+        this.bankAccountNo = bankAccountNo;
     }
 
     public void setPersonalInfo(String name, String citizen, String sex, String dob, String incomeTaxNo){
@@ -84,22 +100,6 @@ public class User {
         return bankAccountNo;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public String getPostcode() {
-        return postcode;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
 
 
     //SETTERS
@@ -127,22 +127,6 @@ public class User {
 
     public void setBankAccountNo(String bankAccountNo) {
         this.bankAccountNo = bankAccountNo;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public void setState(String state) {
-        this.state = state;
     }
 
 }

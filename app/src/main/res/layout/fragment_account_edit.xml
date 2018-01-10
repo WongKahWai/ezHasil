@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.kahwai.ezhasil.FragmentAccountEdit">
+
+        <TextView
+            android:id="@+id/report_view_select_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/gothic_bold"
+            android:text="Update Your Personal Information"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/report_view_select_desc">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/gothic_bold"
+                    android:text="Full Name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/textbox_email"
+                    android:elevation="0dp"
+                    android:fontFamily="@font/gothic"
+                    android:hint="@string/acc_full_name"
+                    android:inputType="text|textCapCharacters|textCapWords"
+                    android:maxLines="1"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:singleLine="true" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/gothic_bold"
+                    android:text="Citizen"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/citizen"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/textbox_email"
+                    android:fontFamily="@font/gothic"
+                    android:hint="Citizen"
+                    android:maxLines="1"
+                    android:paddingLeft="20dp"
+                    android:singleLine="true" />
+            </TableRow>
+            <RadioGroup
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:maxLines="1"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic_bold"
+                    android:layout_marginRight="8dp"
+                    android:textSize="18sp"
+                    android:text="Gender"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/gender_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/acc_Male" />
+
+                <RadioButton
+                    android:id="@+id/gender_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acc_Female" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/dob"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_dob"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/ic_no"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:elevation="0dp"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_mykad"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/home_phone"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:elevation="0dp"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_home_phone"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/mobile_phone"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:elevation="0dp"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_mobile_phone"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/income_tax_no"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_income_tax_no"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/passport"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_passport"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/registered_passport"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_registered_passport"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/bank"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_bank"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/bank_account_no"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_bank_account_no"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/btnSave"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/amberDark"
+                android:fontFamily="@font/gothic_bold"
+                android:text="@string/acc_btn_save"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+        </TableLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
