@@ -55,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="-5dp"
                 android:fontFamily="@font/gothic"
                 android:text="2016"
                 android:textColor="@color/black"
