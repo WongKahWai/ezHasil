@@ -40,7 +40,8 @@
         <activity android:name=".ReportViewActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".HistoryActivity" />
-        <activity android:name=".Payment"></activity>
+        <activity android:name=".Payment" />
+        <activity android:name=".GeneratePDFActivity"></activity>
     </application>
 
 </manifest>
