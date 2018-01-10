@@ -9,21 +9,19 @@ import com.google.firebase.database.IgnoreExtraProperties;
 @IgnoreExtraProperties
 public class User {
     //For login purpose
-    public String icNo;
-    public String password;
+    public String email;
 
     //personal details
     public String name, citizen, sex, dob;
 
     //extra details
-    public String phoneNo, homePhoneNo, email;
+    public String phoneNo, homePhoneNo, icNo;
     public String incomeTaxNo, passportNo, registeredPassport;
     public String bankName, bankAccountNo;
     public String address, postcode, city, state;
 
-    public User(String email, String password){
+    public User(String email){
         this.email = email;
-        this.password = password;
     }
 
     public void setPersonalInfo(String name, String citizen, String sex, String dob, String incomeTaxNo){
@@ -37,10 +35,6 @@ public class User {
     //GETTERS
     public String getIcNo() {
         return icNo;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public String getName() {

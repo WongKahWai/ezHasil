@@ -85,8 +85,8 @@ public class SignUpActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
                 DatabaseReference ref = db.child("Users");
-                Map<String, User> users = new HashMap<>();
-                ref.child(EncodeString(email)).setValue(new User(email, password));
+                //Map<String, User> users = new HashMap<>();
+                ref.child(EncodeString(email)).setValue(new User(email));
 
                 //create user
                 auth.createUserWithEmailAndPassword(email, password)
