@@ -35,7 +35,8 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".AccountActivity" />
         <activity android:name=".ReportViewSelectActivity" />
-        <activity android:name=".Manual_eBE" />
+        <activity android:name=".Manual_eBE"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".Chatbot_eBE" />
         <activity android:name=".ReportViewActivity" />
         <activity android:name=".ForgotPasswordActivity" />

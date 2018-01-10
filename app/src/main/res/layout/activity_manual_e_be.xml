@@ -174,6 +174,7 @@
                             android:hint="DD-MM-YYYY"
                             android:maxLines="1"
                             android:paddingLeft="10dp"
+                            android:inputType="date"
                             android:singleLine="true" />
 
                         <RadioGroup
@@ -276,6 +277,7 @@
                             android:fontFamily="@font/gothic"
                             android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
                             android:singleLine="true"
+
                             android:text="Statutory income from employment"/>
                         <EditText
                             android:id="@+id/b1"
@@ -288,6 +290,7 @@
                             android:hint=""
                             android:maxLines="1"
                             android:paddingLeft="10dp"
+                            android:inputType="number"
                             android:singleLine="true" />
                         <TextView
                             android:layout_width="match_parent"
@@ -312,6 +315,7 @@
                             android:hint=""
                             android:maxLines="1"
                             android:paddingLeft="10dp"
+                            android:inputType="number"
                             android:singleLine="true" />
                         <TextView
                             android:layout_width="match_parent"
@@ -326,7 +330,7 @@
                             android:singleLine="true"
                             android:text="Statutory income from interests, discounts, royalties, premiums, pensions, annuities, other periodical payments and other gains or profit"/>
                         <EditText
-                            android:id="@+id/b4"
+                            android:id="@+id/b3"
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
@@ -336,6 +340,7 @@
                             android:hint=""
                             android:maxLines="1"
                             android:paddingLeft="10dp"
+                            android:inputType="number"
                             android:singleLine="true" />
 
                         <TextView
@@ -361,6 +366,7 @@
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
                             android:hint=""
+                            android:inputType="number"
                             android:maxLines="1"
                             android:paddingLeft="10dp"
                             android:singleLine="true" />
@@ -384,6 +390,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
+                            android:inputType="number"
                             android:hint=""
                             android:maxLines="1"
                             android:paddingLeft="10dp"
@@ -469,7 +476,8 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
-                            android:hint="XXXXXX-XX-XXXX"
+                            android:hint="Without '-'"
+                            android:inputType="number"
                             android:maxLines="1"
                             android:paddingLeft="10dp"
                             android:singleLine="true" />
@@ -492,6 +500,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
+                            android:inputType="date"
                             android:hint="DD-MM-YYYY"
                             android:maxLines="1"
                             android:paddingLeft="10dp"
@@ -739,6 +748,7 @@
                         android:background="@drawable/textbox_email"
                         android:fontFamily="@font/gothic"
                         android:hint=""
+                        android:inputType="number"
                         android:maxLines="1"
                         android:paddingLeft="10dp"
                         android:singleLine="true" />
@@ -760,6 +770,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/textbox_email"
+                        android:inputType="numberDecimal"
                         android:fontFamily="@font/gothic"
                         android:hint=""
                         android:maxLines="1"
@@ -817,6 +828,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/textbox_email"
+                        android:inputType="number"
                         android:fontFamily="@font/gothic"
                         android:hint=""
                         android:maxLines="1"
@@ -840,6 +852,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/textbox_email"
+                        android:inputType="numberDecimal"
                         android:fontFamily="@font/gothic"
                         android:hint=""
                         android:maxLines="1"
@@ -902,6 +915,7 @@
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM5000"
+                            android:inputType="number"
                             android:maxLines="1"
                             android:paddingLeft="10dp"
                             android:singleLine="true" />
@@ -923,6 +937,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
+                            android:inputType="number"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM6000"
                             android:maxLines="1"
@@ -946,6 +961,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
+                            android:inputType="number"
                             android:fontFamily="@font/gothic"
                             android:hint="RM6000"
                             android:maxLines="1"
@@ -969,6 +985,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
+                            android:inputType="number"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM7000"
                             android:maxLines="1"
@@ -992,6 +1009,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
+                            android:inputType="number"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM6000"
                             android:maxLines="1"
@@ -1015,6 +1033,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
+                            android:inputType="number"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM500"
                             android:maxLines="1"
@@ -1038,6 +1057,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
+                            android:inputType="number"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM1000"
                             android:maxLines="1"
@@ -1059,6 +1079,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
+                            android:inputType="number"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
@@ -1082,6 +1103,7 @@
                             android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
+                            android:inputType="number"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM6000"
@@ -1105,6 +1127,7 @@
                             android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
+                            android:inputType="number"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM300"
@@ -1128,6 +1151,7 @@
                             android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
+                            android:inputType="number"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM10000"
@@ -1149,6 +1173,7 @@
                             android:id="@+id/f13"
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
+                            android:inputType="number"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
@@ -1173,6 +1198,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
+                            android:inputType="number"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
@@ -1198,6 +1224,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
+                            android:inputType="number"
                             android:fontFamily="@font/gothic"
                             android:hint=""
                             android:maxLines="1"
@@ -1220,6 +1247,7 @@
                             android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
+                            android:inputType="number"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
                             android:hint=""
@@ -1244,6 +1272,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
+                            android:inputType="number"
                             android:fontFamily="@font/gothic"
                             android:hint=""
                             android:maxLines="1"
@@ -1265,6 +1294,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
+                            android:inputType="number"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
@@ -1289,6 +1319,7 @@
                             android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
+                            android:inputType="number"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
                             android:hint=""
@@ -1349,6 +1380,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
+                            android:inputType="number"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM6000"
                             android:maxLines="1"
@@ -1371,6 +1403,7 @@
                             android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
+                            android:inputType="number"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM3000"
@@ -1395,6 +1428,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
+                            android:inputType="number"
                             android:fontFamily="@font/gothic"
                             android:hint="Restricted to RM3000"
                             android:maxLines="1"
@@ -1419,6 +1453,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
+                            android:inputType="number"
                             android:hint="Restricted to RM250"
                             android:maxLines="1"
                             android:paddingLeft="10dp"
@@ -1491,6 +1526,7 @@
                             android:elevation="0dp"
                             android:fontFamily="@font/gothic"
                             android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+
                             android:singleLine="true"
                             android:text="Telephone No."/>
                         <EditText
@@ -1501,7 +1537,8 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/textbox_email"
                             android:fontFamily="@font/gothic"
-                            android:hint=""
+                            android:inputType="number"
+                            android:hint="Without '-'"
                             android:maxLines="1"
                             android:paddingLeft="10dp"
                             android:singleLine="true" />
@@ -1534,6 +1571,18 @@
                             android:layout_height="20dp" />
                     </LinearLayout>
                 </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+                <Button
+                    android:id="@+id/btnSubmit"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/amberDark"
+                    android:fontFamily="@font/gothic_bold"
+                    android:text="Submit"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
             </LinearLayout>
     </LinearLayout>
 </ScrollView>
