@@ -30,8 +30,8 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
+            android:hint="@string/acc_mykad"
+            android:inputType="number"
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@android:color/white" />
@@ -47,7 +47,8 @@
             android:inputType="textPassword"
             android:maxLines="1"
             android:singleLine="true"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            tools:ignore="InvalidImeActionId" />
 
         <Button
             android:id="@+id/sign_up_button"

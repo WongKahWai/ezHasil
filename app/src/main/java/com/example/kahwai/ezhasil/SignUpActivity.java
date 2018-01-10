@@ -13,15 +13,18 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword;
     private Button btnSignIn, btnSignUp, btnResetPassword;
     private ProgressBar progressBar;
-    private FirebaseAuth auth;
+    private DatabaseReference db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         //Get Firebase auth instance
-        auth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance().getReference();
 
         btnSignIn = (Button) findViewById(R.id.sign_in_button);
         btnSignUp = (Button) findViewById(R.id.sign_up_button);
@@ -57,11 +60,11 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email = inputEmail.getText().toString().trim();
+                String mykad = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
 
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(mykad)) {
+                    Toast.makeText(getApplicationContext(), "Enter myKad No.!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -76,8 +79,13 @@ public class SignUpActivity extends AppCompatActivity {
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
+
+                Map<String, User> users = new HashMap<>();
+                users.put("970405145000", new User("970405145000", "abcde12345"));
+
+                db.child("Users").setValue(users);
                 //create user
-                auth.createUserWithEmailAndPassword(email, password)
+               /* auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -94,7 +102,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     finish();
                                 }
                             }
-                        });
+                        });*/
 
             }
         });

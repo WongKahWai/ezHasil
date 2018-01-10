@@ -38,8 +38,6 @@ import java.util.List;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 
 /*
 import static android.Manifest.permission.READ_CONTACTS;
@@ -72,19 +70,19 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-    private FirebaseAuth auth;
+//    private FirebaseAuth auth;
 
     @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        auth = FirebaseAuth.getInstance();
+//        auth = FirebaseAuth.getInstance();
 
-        if (auth.getCurrentUser() != null) {
+        /*if (auth.getCurrentUser() != null) {
             startActivity(new Intent(LoginActivity.this, MenuActivity.class));
             finish();
-        }
+        }*/
 
         setContentView(R.layout.activity_login);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -186,7 +184,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailView.setError(null);
         mPasswordView.setError(null);
 
-        // Store values at the time of the login attempt.
+        /*// Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();
         final String password = mPasswordView.getText().toString();
 
@@ -218,8 +216,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
-            auth.signInWithEmailAndPassword(email, password)
+            showProgress(true);*/
+            /*auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -234,15 +232,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         } else {
                             Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                         }
-                    } else {
-                        Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                    } else {*/
+                        Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                         startActivity(intent);
                         finish();
-                    }
+
                 }
-                    });
-        }
-    }
+
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic

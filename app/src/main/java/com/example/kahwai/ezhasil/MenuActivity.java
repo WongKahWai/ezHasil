@@ -11,13 +11,13 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private FirebaseAuth.AuthStateListener authListener;
-    private FirebaseAuth auth;
+    /*private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;*/
     private ProgressBar progressBar;
     private Button btnSignOut;
     private TextView btn1,btn2,btn3,btn4,btn5,btn6;
@@ -31,7 +31,7 @@ public class MenuActivity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.custom_action_bar_layout);
         View view = getSupportActionBar().getCustomView();
 
-        auth = FirebaseAuth.getInstance();
+        /*auth = FirebaseAuth.getInstance();
 
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -50,7 +50,7 @@ public class MenuActivity extends AppCompatActivity {
         };
 
         TextView user_name = (TextView)findViewById(R.id.user_name);
-        user_name.setText(user.getEmail());
+        user_name.setText(user.getEmail());*/
 
         btnSignOut = (Button) findViewById(R.id.btnSignOut);
         btnSignOut.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +110,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void Logout() {
-        auth.signOut();
+        //auth.signOut();
     }
 
     @Override
@@ -122,14 +122,14 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        auth.addAuthStateListener(authListener);
+//        auth.addAuthStateListener(authListener);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (authListener != null) {
+       /* if (authListener != null) {
             auth.removeAuthStateListener(authListener);
-        }
+        }*/
     }
 }
