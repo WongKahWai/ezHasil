@@ -105,6 +105,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
+        TextView mRegisterButton = (TextView)findViewById(R.id.register);
+        mRegisterButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+                finish();
+            }
+        });
+
         mLoginFormView = findViewById(R.id.email_login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
@@ -129,7 +138,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
+        final String email = mEmailView.getText().toString();
         final String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
@@ -175,8 +184,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         // there was an error
                         if (password.length() < 6) {
                             mPasswordView.setError(getString(R.string.minimum_password));
-                        } else if(task.getException() instanceof FirebaseAuthInvalidUserException){
-
                         } else {
                             Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                         }
