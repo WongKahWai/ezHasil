@@ -91,16 +91,149 @@
                     android:layout_below="@+id/expandableButton1"
                     android:background="@color/pinkLight"
                     android:padding="16dp"
+                    
                     app:ael_duration="400"
                     app:ael_expanded="false"
                     app:ael_interpolator="accelerate"
                     app:ael_orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="300dp"
-                        android:text="Android is an open source and Linux-based Operating System for mobile devices such as smartphones and tablet computers. Android was developed by the Open Handset Alliance, led by Google, and other companies. The first beta version of the Android Software Development Kit (SDK) was released by Google in 2007 where as the first commercial version, Android 1.0, was released in September 2008."
-                        android:textColor="#FFFFFF" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/report_view_select_desc">
+
+                        <RadioGroup
+                            android:id="@+id/a4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:fontFamily="@font/gothic"
+                            android:layout_marginBottom="10dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:textSize="20sp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="10dp"
+                                android:elevation="0dp"
+                                android:fontFamily="@font/gothic"
+                                android:inputType="text|textCapCharacters|textCapWords"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="Status as at 31-12-2016"/>
+                        <RadioButton
+                            android:id="@+id/a4_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Single"/>
+
+                        <RadioButton
+                            android:id="@+id/a4_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Married"/>
+                        <RadioButton
+                            android:id="@+id/a4_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Divorce/Widow/Widower"/>
+                        <RadioButton
+                            android:id="@+id/a4_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Deceased"
+                            />
+                    </RadioGroup>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="Date of Marriage/Divorce/Demise"/>
+                        <EditText
+                            android:id="@+id/a5"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="DD-MM-YYYY"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+
+                        <RadioGroup
+                            android:id="@+id/a6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:fontFamily="@font/gothic"
+                            android:layout_marginBottom="10dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:textSize="20sp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="10dp"
+                                android:elevation="0dp"
+                                android:fontFamily="@font/gothic"
+                                android:inputType="text|textCapCharacters|textCapWords"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="Type of Assessment"/>
+                            <RadioButton
+                                android:id="@+id/a6_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Joint in the name of husband"/>
+
+                            <RadioButton
+                                android:id="@+id/a6_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Joint in the name of wife"/>
+                            <RadioButton
+                                android:id="@+id/a6_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Separate"/>
+                            <RadioButton
+                                android:id="@+id/a6_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Self whose spouse has no income or no source of income/ has tax exempt income"
+                                />
+                            <RadioButton
+                                android:id="@+id/a6_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Self (Single/Divorcee/Widow/Widower/Deceased)"
+                                />
+                        </RadioGroup>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                    </LinearLayout>
                 </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
                 <Button
@@ -127,11 +260,140 @@
                     app:ael_interpolator="accelerate"
                     app:ael_orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Android Permission Model designed for preventing unauthorized access by third party application.Android applications must declare which permission they require after installation. At a time of android application installation android system display list of permissions which is required to install the current application. The user must decide to install an application or not."
-                        android:textColor="#FFFFFF" />
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/report_view_select_desc">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Statutory income from employment"/>
+                        <EditText
+                            android:id="@+id/b1"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+
+                            android:singleLine="true"
+                            android:text="Statutory income from rents"/>
+                        <EditText
+                            android:id="@+id/b2"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+
+                            android:singleLine="true"
+                            android:text="Statutory income from interests, discounts, royalties, premiums, pensions, annuities, other periodical payments and other gains or profit"/>
+                        <EditText
+                            android:id="@+id/b4"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+
+                            android:singleLine="true"
+                            android:text="Approved Donations/ Gifts/ Contributions"/>
+
+
+                        <EditText
+                            android:id="@+id/b5"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+
+                            android:singleLine="true"
+                            android:text="Total income transferred from spouse"/>
+                        <EditText
+                            android:id="@+id/b7"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                    </LinearLayout>
                 </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
                 <Button
@@ -143,7 +405,7 @@
                     android:drawableRight="@android:drawable/arrow_down_float"
                     android:onClick="expandableButton3"
                     android:paddingRight="10dp"
-                    android:text="Deduction / Rebate / Tax Deduction / Tax Relief"
+                    android:text="PARTICULARS OF HUSBAND/WIFE"
                     android:textColor="#fff" />
 
                 <com.github.aakira.expandablelayout.ExpandableRelativeLayout
@@ -151,18 +413,116 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/expandableButton3"
-                    android:background="@color/darkGreenLight"
+                    android:background="@color/darkGreenDark"
+
                     android:padding="16dp"
                     app:ael_duration="400"
                     app:ael_expanded="false"
                     app:ael_interpolator="accelerate"
                     app:ael_orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="With the help of android debug bridge we can communicate with an emulator or connected physical android device because Android Debug Bridge is a command line tool. Android Debug Bridge is also known as ADB. ADB architecture is like client-server architecture with three components."
-                        android:textColor="#FFFFFF" />
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/report_view_select_desc">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Name of Husband/Wife"/>
+                        <EditText
+                            android:id="@+id/c1"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Identification No."/>
+                        <EditText
+                            android:id="@+id/c2"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="XXXXXX-XX-XXXX"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Date of Birth"/>
+                        <EditText
+                            android:id="@+id/c3"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="DD-MM-YYYY"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Passport No."/>
+                        <EditText
+                            android:id="@+id/c4"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                    </LinearLayout>
                 </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
                 <Button
@@ -174,7 +534,7 @@
                     android:drawableRight="@android:drawable/arrow_down_float"
                     android:onClick="expandableButton4"
                     android:paddingRight="10dp"
-                    android:text="Tax Summary"
+                    android:text="OTHER PARTICULARS"
                     android:textColor="#fff" />
 
                 <com.github.aakira.expandablelayout.ExpandableRelativeLayout
@@ -189,13 +549,991 @@
                     app:ael_interpolator="accelerate"
                     app:ael_orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="The Open Handset Alliance (OHA) was formed in November 2007. The OHA is a business alliance comprised of many of the largest and most successful mobile companies on the planet. Its members include chip makers, handset manufacturers, software developers, and service providers.The entire mobile supply chain is well represented."
-                        android:textColor="#FFFFFF" />
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/report_view_select_desc">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Employer's No."/>
+                        <EditText
+                            android:id="@+id/d5"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Without 'E'"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <RadioGroup
+                            android:id="@+id/d6a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:fontFamily="@font/gothic"
+                            android:layout_marginBottom="10dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:textSize="20sp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="10dp"
+                                android:elevation="0dp"
+                                android:fontFamily="@font/gothic"
+                                android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+
+                                android:singleLine="true"
+                                android:text="Disposal of assett under the Real Property Gains Tax Act 1976"/>
+                            <RadioButton
+                                android:id="@+id/d6a_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Yes"/>
+
+                            <RadioButton
+                                android:id="@+id/d6a_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="No"/>
+
+                        </RadioGroup>
+                        <RadioGroup
+                            android:id="@+id/d6b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:fontFamily="@font/gothic"
+                            android:layout_marginBottom="10dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:textSize="20sp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="10dp"
+                                android:elevation="0dp"
+                                android:fontFamily="@font/gothic"
+                                android:inputType="text|textCapCharacters|textCapWords"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="Disposal declared to LHDNM"/>
+                            <RadioButton
+                                android:id="@+id/d6b_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Yes"/>
+
+                            <RadioButton
+                                android:id="@+id/d6b_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="No"/>
+
+                        </RadioGroup>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                    </LinearLayout>
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+                <Button
+                    android:id="@+id/expandableButton5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableLayout5"
+                    android:background="@color/pinkLight"
+                    android:drawableRight="@android:drawable/arrow_down_float"
+                    android:onClick="expandableButton5"
+                    android:paddingRight="10dp"
+                    android:text="NON-EMPLOYMENT INCOME OF PRECEDING YEARS NOT DECLARED"
+                    android:textColor="#fff" />
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/expandableLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableButton5"
+                    android:background="@color/pinkLight"
+
+                    android:padding="16dp"
+                    app:ael_duration="400"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/report_view_select_desc">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/gothic"
+                        android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                        android:singleLine="true"
+                        android:text="No.1"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/gothic"
+                        android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                        android:singleLine="true"
+                        android:text="Type of Income"/>
+                    <EditText
+                        android:id="@+id/e1a"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/textbox_email"
+                        android:fontFamily="@font/gothic"
+                        android:hint=""
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/gothic"
+                        android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                        android:singleLine="true"
+                        android:text="Year of Assessment"/>
+                    <EditText
+                        android:id="@+id/e1b"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/textbox_email"
+                        android:fontFamily="@font/gothic"
+                        android:hint=""
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/gothic"
+                        android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                        android:singleLine="true"
+                        android:text="Amount(RM)"/>
+                    <EditText
+                        android:id="@+id/e1c"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/textbox_email"
+                        android:fontFamily="@font/gothic"
+                        android:hint=""
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/gothic"
+                        android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                        android:singleLine="true"
+                        android:text="No.2"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/gothic"
+                        android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                        android:singleLine="true"
+                        android:text="Type of Income"/>
+                    <EditText
+                        android:id="@+id/e2a"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/textbox_email"
+                        android:fontFamily="@font/gothic"
+                        android:hint=""
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/gothic"
+                        android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                        android:singleLine="true"
+                        android:text="Year of Assessment"/>
+                    <EditText
+                        android:id="@+id/e2b"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/textbox_email"
+                        android:fontFamily="@font/gothic"
+                        android:hint=""
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/gothic"
+                        android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                        android:singleLine="true"
+                        android:text="Amount(RM)"/>
+                    <EditText
+                        android:id="@+id/e2c"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/textbox_email"
+                        android:fontFamily="@font/gothic"
+                        android:hint=""
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+                <Button
+                    android:id="@+id/expandableButton6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableLayout6"
+                    android:background="@color/blueLight"
+                    android:drawableRight="@android:drawable/arrow_down_float"
+                    android:onClick="expandableButton6"
+                    android:paddingRight="10dp"
+                    android:text="RELIEFS"
+                    android:textColor="#fff" />
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/expandableLayout6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableButton6"
+                    android:background="@color/blueLight"
+
+                    android:padding="16dp"
+                    app:ael_duration="400"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/report_view_select_desc">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Medical treatment expenses for parents"/>
+                        <EditText
+                            android:id="@+id/f2"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM5000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Basic supporting equipment for disabled self, spouse, child or parent"/>
+                        <EditText
+                            android:id="@+id/f3"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM6000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Disabled individual"/>
+                        <EditText
+                            android:id="@+id/f4"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="RM6000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Education Fee"/>
+                        <EditText
+                            android:id="@+id/f5"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM7000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Medical expenses on serious diseases for self, spouse or child"/>
+                        <EditText
+                            android:id="@+id/f6"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM6000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Complete medical examination for self, spouse or child"/>
+                        <EditText
+                            android:id="@+id/f7"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM500"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Purchase of books/magazines/journals/similar publications"/>
+                        <EditText
+                            android:id="@+id/f8"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM1000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Purchase of personal computer for individual (deduction allowed once in every 3 years)"/>
+                        <EditText
+                            android:id="@+id/f9"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM3000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"/>
+                        <EditText
+                            android:id="@+id/f10"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM6000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Purchase of Sport Equipments"/>
+                        <EditText
+                            android:id="@+id/f11"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM300"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Interests housing loan (Conditions must be fulfilled)"/>
+                        <EditText
+                            android:id="@+id/f12"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM10000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Husband/ Wife/ Payment of alimony to former wife"/>
+                        <EditText
+                            android:id="@+id/f13"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM4000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Disabled husband/ wife"/>
+                        <EditText
+                            android:id="@+id/f14"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="RM3500"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Number of children under the age of 18 years"/>
+                        <EditText
+                            android:id="@+id/f15a_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Number of children 18 Years &amp;studying but not in tertiary study "/>
+                        <EditText
+                            android:id="@+id/f15b_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Number of children 18 Years &amp;pursuing tertiary study"/>
+                        <EditText
+                            android:id="@+id/f15c_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Number of disabled children not pursuing tertiary study "/>
+                        <EditText
+                            android:id="@+id/f15d_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Number of disabled children pursuing tertiary study "/>
+                        <EditText
+                            android:id="@+id/f15e_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <RadioGroup
+                            android:id="@+id/f15_e"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:fontFamily="@font/gothic"
+
+                            android:layout_marginBottom="10dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:textSize="20sp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="10dp"
+                                android:elevation="0dp"
+                                android:fontFamily="@font/gothic"
+                                android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+
+                                android:singleLine="true"
+                                android:text="Is both of the parents of the children are paying income tax?"/>
+                            <RadioButton
+                                android:id="@+id/f15_50"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Yes"/>
+
+                            <RadioButton
+                                android:id="@+id/f15_100"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="No"/>
+
+                        </RadioGroup>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Life insurance and provident fund"/>
+                        <EditText
+                            android:id="@+id/f16"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM6000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Private Retirement Scheme and Deferred Annuity"/>
+                        <EditText
+                            android:id="@+id/f17"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM3000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/gothic"
+                        android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                        android:singleLine="true"
+                        android:text="Education and medical insurance"/>
+                        <EditText
+                            android:id="@+id/f18"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM3000"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="SOCSO"/>
+                        <EditText
+                            android:id="@+id/f19"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint="Restricted to RM250"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                    </LinearLayout>
                 </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
+                <Button
+                    android:id="@+id/expandableButton8"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableLayout8"
+                    android:background="@color/greenLight"
+                    android:drawableRight="@android:drawable/arrow_down_float"
+                    android:onClick="expandableButton8"
+                    android:paddingRight="10dp"
+                    android:text="PARTICULARS OF TAX AGENT"
+                    android:textColor="#fff" />
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/expandableLayout8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/expandableButton8"
+                    android:background="@color/greenDark"
+
+                    android:padding="16dp"
+                    app:ael_duration="400"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/report_view_select_desc">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Name of Firm"/>
+                        <EditText
+                            android:id="@+id/g1"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Telephone No."/>
+                        <EditText
+                            android:id="@+id/g2"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Tax Agent's Approval No."/>
+                        <EditText
+                            android:id="@+id/g3"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                    </LinearLayout>
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             </LinearLayout>
     </LinearLayout>
 </ScrollView>
