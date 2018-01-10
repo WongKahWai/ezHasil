@@ -116,7 +116,6 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //progressBar.setVisibility(View.GONE);
     }
 
     @Override
@@ -128,7 +127,7 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public void onStop() {
         super.onStop();
-        if (authListener != null) {
+       if (authListener != null) {
             auth.removeAuthStateListener(authListener);
         }
     }

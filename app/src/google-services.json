@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "127421134982-rud8mvo8dfgfdanuitt4s8bmb6f6capi.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.kahwai.ezhasil",
-            "certificate_hash": "060d9855fc2a4e93d50edf08769258f6b440e0a0"
-          }
-        },
-        {
           "client_id": "127421134982-gc6fmnffet1vatvgri7ga08vnosqc773.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "127421134982-gc6fmnffet1vatvgri7ga08vnosqc773.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

@@ -43,7 +43,7 @@
             android:layout_marginBottom="30dp"
             android:background="@drawable/textbox_email"
             android:fontFamily="@font/gothic"
-            android:hint="MyKad No. (without '-')"
+            android:hint="@string/prompt_email"
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:paddingLeft="20dp"
@@ -79,14 +79,25 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/register"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/gothic"
+            android:onClick="forgot_onClick"
+            android:text="Register Now!"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
             android:id="@+id/forgot_password_title2"
             android:layout_width="300dp"
-            android:layout_height="52dp"
+            android:layout_height="40dp"
             android:fontFamily="@font/gothic"
+            android:onClick="forgot_onClick"
             android:text="Forgot Password? Click Here"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:onClick="forgot_onClick"
             android:textSize="18sp" />
 
     </LinearLayout>
