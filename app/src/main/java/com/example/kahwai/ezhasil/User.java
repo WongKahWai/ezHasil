@@ -1,12 +1,11 @@
 package com.example.kahwai.ezhasil;
 
-import com.google.firebase.database.IgnoreExtraProperties;
 
 /**
  * Created by Min on 10-Jan-18.
  */
 
-@IgnoreExtraProperties
+
 public class User {
     //For login purpose
     public String icNo;
