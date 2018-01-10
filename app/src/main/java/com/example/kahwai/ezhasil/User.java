@@ -21,8 +21,8 @@ public class User {
     public String bankName, bankAccountNo;
     public String address, postcode, city, state;
 
-    public User(String icNo, String password){
-        this.icNo = icNo;
+    public User(String email, String password){
+        this.email = email;
         this.password = password;
     }
 
