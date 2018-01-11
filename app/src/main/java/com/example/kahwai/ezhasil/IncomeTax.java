@@ -446,7 +446,7 @@ public class IncomeTax {
         this.intf15_eligibility = intf15_eligibility;
 
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String formattedDate = df.format(c.getTime());;
 
         this.submit_date = formattedDate;
