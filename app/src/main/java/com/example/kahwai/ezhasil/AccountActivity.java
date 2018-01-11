@@ -42,7 +42,7 @@ public class AccountActivity extends AppCompatActivity {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.child("Users").child(EncodeString(emailUser)).getValue(User.class);
+                User user = dataSnapshot.child("Users").child(EncodeString(emailUser)).child("Profile").getValue(User.class);
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
                 if(user == null)

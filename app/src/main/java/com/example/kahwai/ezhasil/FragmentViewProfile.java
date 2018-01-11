@@ -66,7 +66,7 @@ public class FragmentViewProfile extends Fragment {
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.child("Users").child(EncodeString(emailUser)).getValue(User.class);
+                User user = dataSnapshot.child("Users").child(EncodeString(emailUser)).child("Profile").getValue(User.class);
 
                 tvName.setText(user.getName());
                 tvIcNo.setText(user.getIcNo());
