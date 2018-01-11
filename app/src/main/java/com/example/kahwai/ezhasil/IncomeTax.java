@@ -362,7 +362,7 @@ public class IncomeTax {
         return intf15_eligibility;
     }
 
-    public IncomeTax(int intb1, int intb2, int intb3, int intb5, int intb7, int intb13a, int intb13b, int intb13c, int intf1, int intf2, int intf3, int intf4, int intf5, int intf6, int intf7, int intf8, int intf9, int intf10, int intf11, int intf12, int intf13, int intf14, int intf15a_num, int intf15b_num, int intf15c_num, int intf15d_num, int intf15e_num, int intf16, int intf17, int intf18, int intf19, int intf20, int intb4, int intb6, int intb8, int intb9, int intb10, double intb15a, double intb15b, double intb13, double intb15, double intb18, double intf15a_total, double intf15b_total, double intf15c_total, double intf15d_total, double intf15e_total, int intf15a, int intf15b, int intf15c, double intb11a_1, double intb11b_1, double intb11b_2, double intb11a, double intb11b, double intb12, double intb14, double intb16, double intb17, double intb19, String stra5, String strc1, String strc2, String strc3, String strc4, String strd5, String stre1a, String stre1b, String stre1c, String stre2a, String stre2b, String stre2c, String strg1, String strg2, String strg3, String stra4, String stra6, String strd6a, String strd6b, double intf15_eligibility) {
+    public IncomeTax(int intb1, int intb2, int intb3, int intb5, int intb7, int intb13a, int intb13b, int intb13c, int intf1, int intf2, int intf3, int intf4, int intf5, int intf6, int intf7, int intf8, int intf9, int intf10, int intf11, int intf12, int intf13, int intf14, int intf15a_num, int intf15b_num, int intf15c_num, int intf15d_num, int intf15e_num, int intf16, int intf17, int intf18, int intf19, int intf20, int intb4, int intb6, int intb8, int intb9, int intb10, double intb15a, double intb15b, double intb13, double intb15, double intb18, double intf15a_total, double intf15b_total, double intf15c_total, double intf15d_total, double intf15e_total, int intf15a, int intf15b, int intf15c, double intb11a_1, double intb11b_1, double intb11b_2, double intb11a, double intb11b, double intb12, double intb14, double intb16, double intb17, double intb19, String stra5, String strc1, String strc2, String strc3, String strc4, String strd5, String stre1a, String stre1b, String stre1c, String stre2a, String stre2b, String stre2c, String strg1, String strg2, String strg3, String stra4, String stra6, String strd6a, String strd6b, double intf15_eligibility,String submit_status) {
         this.intb1 = intb1;
         this.intb2 = intb2;
         this.intb3 = intb3;
@@ -450,6 +450,6 @@ public class IncomeTax {
         String formattedDate = df.format(c.getTime());;
 
         this.submit_date = formattedDate;
-        this.submit_status = "Drafted";
+        this.submit_status = submit_status;
     }
 }

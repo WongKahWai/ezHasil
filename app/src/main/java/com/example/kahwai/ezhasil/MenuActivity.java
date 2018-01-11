@@ -31,14 +31,13 @@ public class MenuActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
-    private FirebaseDatabase db;
+    private FirebaseDatabase db,db2;
     private Button btnSignOut;
     private TextView btn1,btn2,btn3,btn4,btn5,btn6;
+    private IncomeTax income_tax;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
         setContentView(R.layout.activity_menu);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -51,11 +50,12 @@ public class MenuActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
+        db2 = FirebaseDatabase.getInstance();
 
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference ref = db.getReference().child("Users").child(EncodeString(user.getEmail())).child("Profile");
-
+        DatabaseReference ref2 = db2.getReference().child("Users").child(EncodeString(user.getEmail())).child("IncomeTax");
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -105,14 +105,32 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //startActivity(new Intent(MenuActivity.this, GeneratePDFActivity.class));
+                startActivity(new Intent(MenuActivity.this, ReportViewSelectActivity.class));
             }
         });
 
         btn3 = (TextView) findViewById(R.id.btn3);
+        ref2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                income_tax =  dataSnapshot.getValue(IncomeTax.class);
+                System.out.println(income_tax);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MenuActivity.this, Manual_eBE.class));
+                if (income_tax.getSubmit_status().equals("Submitted")) {
+                    Toast.makeText(getApplicationContext(), "You have already submitted your form!", Toast.LENGTH_SHORT).show();
+                    return;
+                }else {
+                    startActivity(new Intent(MenuActivity.this, Manual_eBE.class));
+                }
             }
         });
 
