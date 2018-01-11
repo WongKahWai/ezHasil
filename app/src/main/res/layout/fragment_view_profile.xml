@@ -5,11 +5,11 @@
     tools:context="com.example.kahwai.ezhasil.FragmentViewProfile">
 
     <TextView
-        android:id="@+id/personal_title"
+        android:id="@+id/title_personal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:fontFamily="@font/gothic_bold"
+        android:fontFamily="@font/gothic_bold_italic"
         android:text="User Profile"
         android:textColor="@color/black"
         android:textSize="25sp" />
@@ -21,7 +21,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
-        android:layout_below="@+id/personal_title"
+        android:layout_below="@+id/title_personal"
         android:layout_marginTop="15dp"
         android:text="Name:"
         android:fontFamily="@font/gothic_bold"
@@ -81,15 +81,30 @@
         android:textSize="15dp" />
 
     <TextView
-        android:id="@+id/extra_title"
+        android:id="@+id/title_extra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_below="@+id/lbl_incomeTax"
+        android:layout_marginTop="15dp"
         android:text="Additional Information"
-        android:fontFamily="@font/gothic_bold"
+        android:fontFamily="@font/gothic_bold_italic"
         android:textColor="@color/black"
         android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/title_passport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_incomeTax"
+        android:layout_alignStart="@+id/lbl_incomeTax"
+        android:layout_below="@+id/title_extra"
+        android:layout_marginTop="15dp"
+        android:text="Passport"
+        android:fontFamily="@font/gothic_bold_italic"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
 
 
 </RelativeLayout>

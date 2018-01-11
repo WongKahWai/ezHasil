@@ -30,7 +30,8 @@ public class AccountActivity extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment_layout, new FragmentAccountEdit());
+//        ft.replace(R.id.fragment_layout, new FragmentAccountEdit());
+        ft.replace(R.id.fragment_layout, new FragmentViewProfile());
         ft.commit();
     }
 
