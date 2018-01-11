@@ -79,5 +79,8 @@
     <!--Manual BE-->
     <string name="mbe_status_as_in_2017">Status as at 31-12-2017</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

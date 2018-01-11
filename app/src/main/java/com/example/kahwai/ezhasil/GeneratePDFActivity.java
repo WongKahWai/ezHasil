@@ -50,10 +50,17 @@ public class GeneratePDFActivity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.custom_action_bar_layout);
         View view = getSupportActionBar().getCustomView();
 
-        SelfNoteFragment noteFragment = SelfNoteFragment.newInstance();
+        SuccessFillingFragment noteFragment = SuccessFillingFragment.newInstance();
 
         android.support.v4.app.FragmentTransaction fragTransaction = this.getSupportFragmentManager().beginTransaction();
         fragTransaction.replace(R.id.container, noteFragment);
         fragTransaction.commit();
+
+        SelfNoteFragment noteFragment2 = SelfNoteFragment.newInstance();
+
+        android.support.v4.app.FragmentTransaction fragTransaction2 = this.getSupportFragmentManager().beginTransaction();
+        fragTransaction2.replace(R.id.container2, noteFragment2);
+        fragTransaction2.commit();
     }
+
 }

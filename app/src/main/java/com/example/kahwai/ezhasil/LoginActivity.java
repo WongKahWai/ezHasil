@@ -169,8 +169,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
-
+            //showProgress(true);
 
             auth.signInWithEmailAndPassword(email,password)
                     .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
@@ -204,10 +203,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         //TODO: Replace this with your own logic
         return password.length() > 4;
     }
+/*
 
-    /**
+    */
+/**
      * Shows the progress UI and hides the login form.
-     */
+     *//*
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
@@ -240,6 +242,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
+*/
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
@@ -327,7 +330,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         @Override
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
-            showProgress(false);
+            //showProgress(false);
 
             if (success) {
                 finish();
@@ -340,7 +343,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         @Override
         protected void onCancelled() {
             mAuthTask = null;
-            showProgress(false);
+            //showProgress(false);
         }
     }
 }

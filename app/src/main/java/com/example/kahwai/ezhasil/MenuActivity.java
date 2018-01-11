@@ -75,8 +75,6 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-
-
         btnSignOut = (Button) findViewById(R.id.btnSignOut);
         btnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +95,7 @@ public class MenuActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MenuActivity.this, GeneratePDFActivity.class));
+                //startActivity(new Intent(MenuActivity.this, GeneratePDFActivity.class));
             }
         });
 
