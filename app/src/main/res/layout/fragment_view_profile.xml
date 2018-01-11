@@ -1,9 +1,14 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.kahwai.ezhasil.FragmentViewProfile">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <!--Labels-->
     <TextView
         android:id="@+id/title_personal"
         android:layout_width="wrap_content"
@@ -76,12 +81,42 @@
         android:textSize="15dp" />
 
     <TextView
+        android:id="@+id/lbl_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/lbl_email"
+        android:layout_alignLeft="@+id/lbl_email"
+        android:layout_alignRight="@+id/lbl_email"
+        android:layout_alignStart="@+id/lbl_email"
+        android:layout_below="@+id/lbl_email"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/gothic_bold"
+        android:text="Mobile Phone No:"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/lbl_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/lbl_mobile"
+        android:layout_alignLeft="@+id/lbl_mobile"
+        android:layout_alignRight="@+id/lbl_mobile"
+        android:layout_alignStart="@+id/lbl_mobile"
+        android:layout_below="@+id/lbl_mobile"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/gothic_bold"
+        android:text="Home Phone No:"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
         android:id="@+id/lbl_incomeTax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lbl_email"
-        android:layout_alignStart="@+id/lbl_email"
-        android:layout_below="@+id/lbl_email"
+        android:layout_alignLeft="@+id/lbl_home"
+        android:layout_alignStart="@+id/lbl_home"
+        android:layout_below="@+id/lbl_home"
         android:layout_marginTop="15dp"
         android:text="Income Tax No:"
         android:fontFamily="@font/gothic_bold"
@@ -102,30 +137,17 @@
         android:textSize="25sp"/>
 
     <TextView
-        android:id="@+id/title_passport"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lbl_incomeTax"
-        android:layout_alignStart="@+id/lbl_incomeTax"
-        android:layout_below="@+id/title_extra"
-        android:layout_marginTop="15dp"
-        android:text="Passport"
-        android:fontFamily="@font/gothic_bold_italic"
-        android:textColor="@color/black"
-        android:textSize="20sp"/>
-
-    <TextView
         android:id="@+id/lbl_passport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/lbl_incomeTax"
-        android:layout_alignLeft="@+id/title_passport"
+        android:layout_alignLeft="@+id/lbl_incomeTax"
         android:layout_alignRight="@+id/lbl_incomeTax"
-        android:layout_alignStart="@+id/title_passport"
-        android:layout_below="@+id/title_passport"
+        android:layout_alignStart="@+id/lbl_incomeTax"
+        android:layout_below="@+id/title_extra"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/gothic_bold"
-        android:text="Current:"
+        android:text="Current Passport:"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
@@ -140,94 +162,174 @@
         android:layout_below="@+id/lbl_passport"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/gothic_bold"
-        android:minLines="2"
-        android:text="Registered with LHDNM:"
+        android:text="Passport Registered with LHDNM:"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/lbl_bank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/lbl_registered"
         android:layout_alignLeft="@+id/lbl_registered"
+        android:layout_alignRight="@+id/lbl_registered"
         android:layout_alignStart="@+id/lbl_registered"
         android:layout_below="@+id/lbl_registered"
-        android:layout_marginTop="18dp"
-        android:text="TextView" />
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/gothic_bold"
+        android:text="Bank Name:"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
 
+    <TextView
+        android:id="@+id/lbl_bankAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/lbl_bank"
+        android:layout_alignLeft="@+id/lbl_bank"
+        android:layout_alignRight="@+id/lbl_bank"
+        android:layout_alignStart="@+id/lbl_bank"
+        android:layout_below="@+id/lbl_bank"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/gothic_bold"
+        android:text="Bank Account No:"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
 
-</RelativeLayout>
-<!--<TextView-->
-<!--android:id="@+id/lblName"-->
-<!--android:layout_width="wrap_content"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:layout_alignParentLeft="true"-->
-<!--android:layout_alignParentStart="true"-->
-<!--android:layout_alignParentTop="true"-->
-<!--android:layout_marginLeft="13dp"-->
-<!--android:layout_marginTop="13dp"-->
-<!--android:fontFamily="@font/gothic_bold"-->
-<!--android:text="Name:"-->
-<!--android:textColor="@color/black"-->
-<!--android:textSize="20sp" />-->
+    <!--Details-->
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lbl_icNo"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/lbl_name"
+        android:layout_toRightOf="@+id/lbl_name"
+        android:fontFamily="@font/gothic"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
 
-<!--<TextView-->
-<!--android:id="@+id/tvName"-->
-<!--android:layout_width="wrap_content"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:layout_alignBottom="@+id/lblName"-->
-<!--android:layout_marginLeft="26dp"-->
-<!--android:layout_marginStart="26dp"-->
-<!--android:layout_toEndOf="@+id/lblName"-->
-<!--android:layout_toRightOf="@+id/lblName"-->
-<!--android:fontFamily="@font/gothic_bold"-->
-<!--android:textColor="@color/black"-->
-<!--android:textSize="20sp"/>-->
+    <TextView
+        android:id="@+id/tv_icNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_name"
+        android:layout_alignStart="@+id/tv_name"
+        android:layout_alignTop="@+id/lbl_icNo"
+        android:fontFamily="@font/gothic"
+        android:textColor="@color/black"
+        android:textSize="15dp"/>
 
-<!--<TextView-->
-<!--android:id="@+id/lblGender"-->
-<!--android:layout_width="wrap_content"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:layout_alignLeft="@+id/lblName"-->
-<!--android:layout_alignStart="@+id/lblName"-->
-<!--android:layout_below="@+id/lblName"-->
-<!--android:layout_marginTop="13dp"-->
-<!--android:fontFamily="@font/gothic_bold"-->
-<!--android:text="Gender:"-->
-<!--android:textColor="@color/black"-->
-<!--android:textSize="20sp" />-->
+    <TextView
+        android:id="@+id/tv_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lbl_email"
+        android:layout_toEndOf="@+id/tv_icNo"
+        android:layout_toRightOf="@+id/tv_icNo"
+        android:fontFamily="@font/gothic"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
 
-<!--<TextView-->
-<!--android:id="@+id/tvGender"-->
-<!--android:layout_width="wrap_content"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:layout_alignTop="@+id/lblGender"-->
-<!--android:layout_toEndOf="@+id/tvName"-->
-<!--android:layout_toRightOf="@+id/tvName"-->
-<!--android:fontFamily="@font/gothic_bold"-->
-<!--android:textColor="@color/black"-->
-<!--android:textSize="20sp"/>-->
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lbl_email"
+        android:layout_toEndOf="@+id/tv_gender"
+        android:layout_toRightOf="@+id/tv_gender"
+        android:fontFamily="@font/gothic"
+        android:textColor="@color/black"
+        android:textSize="15dp"/>
 
-<!--<TextView-->
-<!--android:id="@+id/lblICno"-->
-<!--android:layout_width="wrap_content"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:layout_alignLeft="@+id/lblGender"-->
-<!--android:layout_alignStart="@+id/lblGender"-->
-<!--android:layout_below="@+id/lblGender"-->
-<!--android:layout_marginTop="13dp"-->
-<!--android:text="IC No."-->
-<!--android:fontFamily="@font/gothic_bold"-->
-<!--android:textColor="@color/black"-->
-<!--android:textSize="20sp" />-->
+    <TextView
+        android:id="@+id/tv_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lbl_mobile"
+        android:layout_toEndOf="@+id/tv_email"
+        android:layout_toRightOf="@+id/tv_email"
+        android:fontFamily="@font/gothic"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
 
-<!--<TextView-->
-<!--android:id="@+id/tvICno"-->
-<!--android:layout_width="wrap_content"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:layout_alignTop="@+id/lblICno"-->
-<!--android:layout_toEndOf="@+id/tvGender"-->
-<!--android:layout_toRightOf="@+id/tvGender"-->
-<!--android:fontFamily="@font/gothic_bold"-->
-<!--android:textColor="@color/black"-->
-<!--android:textSize="20sp" />-->
+    <TextView
+        android:id="@+id/tv_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lbl_home"
+        android:layout_toEndOf="@+id/tv_mobile"
+        android:layout_toRightOf="@+id/tv_mobile"
+        android:fontFamily="@font/gothic"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/tv_incomeTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/title_extra"
+        android:layout_alignLeft="@+id/tv_home"
+        android:layout_alignStart="@+id/tv_home"
+        android:fontFamily="@font/gothic"
+        android:textColor="@color/black"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_passport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lbl_passport"
+        android:layout_toEndOf="@+id/tv_incomeTax"
+        android:layout_toRightOf="@+id/tv_incomeTax"
+        android:fontFamily="@font/gothic"
+        android:textColor="@color/black"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_registeredPassport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_passport"
+        android:layout_alignStart="@+id/tv_passport"
+        android:layout_alignTop="@+id/lbl_registered"
+        android:fontFamily="@font/gothic"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tv_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/lbl_bankAccount"
+            android:layout_toEndOf="@+id/tv_registeredPassport"
+            android:layout_toRightOf="@+id/tv_registeredPassport"
+            android:fontFamily="@font/gothic"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tv_bankAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/lbl_bankAccount"
+            android:layout_toEndOf="@+id/tv_bank"
+            android:layout_toRightOf="@+id/tv_bank"
+            android:fontFamily="@font/gothic"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <!--Edit Profile-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_bankAccount"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gothic_italic"
+            android:textColor="@color/blueDark"
+            android:textSize="13dp"
+            android:text="Click here to edit your profile"/>
+    </RelativeLayout>
+</ScrollView>
