@@ -121,7 +121,7 @@ public class SelfNoteFragment extends Fragment {
             pdfFolder.mkdir();
             Log.i(LOG_TAG, "Pdf Directory created");
         }*/
-        File folder = new File(Environment.getExternalStorageDirectory() + "/ezHasil/");
+        File folder = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/ezHasil/");
         if(!folder.exists()){
             folder.mkdir();
             System.out.println(folder);
