@@ -6,21 +6,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Manual_eBE extends AppCompatActivity {
 
     ExpandableRelativeLayout expandableLayout1, expandableLayout2, expandableLayout3, expandableLayout4, expandableLayout5, expandableLayout6,expandableLayout8;
     private Button btnSubmit;
-    private EditText a5,b1,b2,b3,b5,b7,c1,c2,c3,c4,d5,e1a,e1b,e1c,e2a,e2b,e2c,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15a_num,f15b_num,f15c_num,f15d_num,f15e_num,f16,f17,f18,f19,g1,g2,g3;
+    private EditText a5,b1,b2,b3,b5,b7,b13a,b13b,b13c,b15a,b15b,b18,c1,c2,c3,c4,d5,e1a,e1b,e1c,e2a,e2b,e2c;
+    private EditText f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15a_num,f15b_num,f15c_num,f15d_num,f15e_num,f16,f17,f18,f19,g1,g2,g3;
     private RadioGroup a4,a6,d6a,d6b,f15_e;
+    private RadioButton rb_a4,rb_a6,rb_d6a,rb_d6b;
     private double eligibility;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         setContentView(R.layout.activity_manual_e_be);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -28,15 +34,21 @@ public class Manual_eBE extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.custom_action_bar_layout);
         View view = getSupportActionBar().getCustomView();
 
-            RadioGroup a4 =(RadioGroup) findViewById(R.id.a4);
-            EditText a5 = (EditText) findViewById(R.id.a5);
-            RadioGroup a6 =(RadioGroup) findViewById(R.id.a6);
+            a4 =(RadioGroup) findViewById(R.id.a4);
+            a5 = (EditText) findViewById(R.id.a5);
+            a6 =(RadioGroup) findViewById(R.id.a6);
 
             b1 = (EditText) findViewById(R.id.b1);
             b2 = (EditText) findViewById(R.id.b2);
             b3 = (EditText) findViewById(R.id.b3);
             b5 = (EditText) findViewById(R.id.b5);
             b7 = (EditText) findViewById(R.id.b7);
+            b13a = (EditText) findViewById(R.id.b13a);
+            b13b = (EditText) findViewById(R.id.b13b);
+            b13c = (EditText) findViewById(R.id.b13c);
+            b15a = (EditText) findViewById(R.id.b15a);
+            b15b = (EditText) findViewById(R.id.b15b);
+            b18 = (EditText) findViewById(R.id.b18);
 
             c1 = (EditText) findViewById(R.id.c1);
             c2 = (EditText) findViewById(R.id.c2);
@@ -85,8 +97,6 @@ public class Manual_eBE extends AppCompatActivity {
             btnSubmit = (Button) findViewById(R.id.btnSubmit);
 
 
-
-
             d6b.setVisibility(View.INVISIBLE);
             d6a.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
@@ -123,17 +133,103 @@ public class Manual_eBE extends AppCompatActivity {
 
         });
         btnSubmit.setOnClickListener(new View.OnClickListener() {
-            int intb1,intb2,intb3,intb5,intb7;
-            int intf2,intf3,intf4,intf5,intf6,intf7,intf8,intf9,intf10,intf11,intf12,intf13,intf14,intf15a_num,intf15b_num,intf15c_num,intf15d_num,intf15e_num,intf16,intf17,intf18,intf19,intf20;
+
+            int intb1,intb2,intb3,intb5,intb7,intb13a,intb13b,intb13c;
+            int intf1=9000,intf2,intf3,intf4,intf5,intf6,intf7,intf8,intf9,intf10,intf11,intf12,intf13,intf14,intf15a_num,intf15b_num,intf15c_num,intf15d_num,intf15e_num,intf16,intf17,intf18,intf19,intf20;
             int intb4,intb6,intb8,intb9,intb10;
+            double intb15a,intb15b;
+            double intb13,intb15,intb18;
             double intf15a_total,intf15b_total,intf15c_total,intf15d_total,intf15e_total;
             int intf15a,intf15b,intf15c;
+            double intb11a_1,intb11b_1,intb11b_2;
+            double intb11a=0,intb11b=0,intb12,intb14,intb16=0,intb17,intb19;
+            String stra5,strc1,strc2,strc3,strc4,strd5,stre1a,stre1b,stre1c,stre2a,stre2b,stre2c,strg1,strg2,strg3,stra4,stra6,strd6a,strd6b;
             @Override
             public void onClick(View v) {
+                rb_a4= ((RadioButton) findViewById(a4.getCheckedRadioButtonId()));
+                rb_a6= ((RadioButton) findViewById(a6.getCheckedRadioButtonId()));
+                rb_d6a= ((RadioButton) findViewById(d6a.getCheckedRadioButtonId()));
+                rb_d6b= ((RadioButton) findViewById(d6b.getCheckedRadioButtonId()));
+
+                stra5 = a5.getText().toString();
+                strc1 = c1.getText().toString();
+                strc2 = c2.getText().toString();
+                strc3 = c3.getText().toString();
+                strc4 = c4.getText().toString();
+                strd5 = d5.getText().toString();
+                stre1a = e1a.getText().toString();
+                stre1b = e1b.getText().toString();
+                stre1c = e1c.getText().toString();
+                stre2a = e2a.getText().toString();
+                stre2b = e2b.getText().toString();
+                stre2c = e2c.getText().toString();
+                strg1 = g1.getText().toString();
+                strg2 = g2.getText().toString();
+                strg3 = g3.getText().toString();
+                stra4 = rb_a4.getText().toString();
+                stra6 = rb_a6.getText().toString();
+                strd6a = rb_d6a.getText().toString();
+                strd6b = rb_d6b.getText().toString();
 
 
 
+                if(stra4.equals("Single")){
+                    stra4 = "1";
+                }
+                else if(stra4.equals("Married")){
+                    stra4 = "2";
+                }
+                else if(stra4.equals("Divorce/Widow/Widower")){
+                    stra4 = "3";
+                }
+                else if(stra4.equals("Deceased")){
+                    stra4 = "4";
+                }
+                else{
+                    stra4 = "";
+                }
 
+
+                if(stra6.equals("Joint in the name of husband")){
+                    stra6 = "1";
+                }
+                else if(stra6.equals("Joint in the name of wife")){
+                    stra6 = "2";
+                }
+                else if(stra6.equals("Separate")){
+                    stra6 = "3";
+                }
+                else if(stra6.equals("Self whose spouse has no income or no source of income/ has tax exempt income")){
+                    stra6 = "4";
+                }
+                else if(stra6.equals("Self (Single/Divorcee/Widow/Widower/Deceased)")){
+                    stra6 = "5";
+                }
+                else{
+                    stra6 = "";
+                }
+
+
+                if(strd6a.equals("Yes")){
+                    strd6a = "1";
+                }
+                else if(strd6a.equals("No")){
+                    strd6a = "2";
+                }
+                else{
+                    strd6a = "";
+                }
+
+
+                if(strd6b.equals("Yes")){
+                    strd6b = "1";
+                }
+                else if(strd6b.equals("No")){
+                    strd6b = "2";
+                }
+                else{
+                    strd6b = "";
+                }
 
                 if(b1.getText().toString().matches("")){
                     intb1=0;
@@ -161,6 +257,38 @@ public class Manual_eBE extends AppCompatActivity {
                 }else{
                     intb7 = Integer.parseInt(b7.getText().toString());
                 }
+                if(b13a.getText().toString().matches("")){
+                    intb13a=0;
+                }else{
+                    intb13a = Integer.parseInt(b13a.getText().toString());
+                }
+                if(b13b.getText().toString().matches("")){
+                    intb13b=0;
+                }else{
+                    intb13b = Integer.parseInt(b13b.getText().toString());
+                }
+                if(b13c.getText().toString().matches("")){
+                    intb13c=0;
+                }else{
+                    intb13c = Integer.parseInt(b13c.getText().toString());
+                }
+                if(b15a.getText().toString().matches("")){
+                    intb15a=0;
+                }else{
+                    intb15a = Double.parseDouble(b15a.getText().toString());
+
+                }
+                if(b15b.getText().toString().matches("")){
+                    intb15b=0;
+                }else{
+                    intb15b = Double.parseDouble(b15b.getText().toString());
+                }
+                if(b18.getText().toString().matches("")){
+                    intb18=0;
+                }else{
+                    intb18 = Double.parseDouble(b18.getText().toString());
+                }
+
 
 
                 if(f2.getText().toString().matches("")){
@@ -328,6 +456,8 @@ public class Manual_eBE extends AppCompatActivity {
                 
                 intb4 = intb1+intb2+intb3;
                 intb6 = intb4-intb5;
+                intb13 = intb13a+intb13b+intb13c;
+                intb15 = intb15a+intb15b;
                 if(intb6<0){
                     intb6=0;
                 }
@@ -337,8 +467,111 @@ public class Manual_eBE extends AppCompatActivity {
                 intb8=intb6+intb7;
 
                 intb10=intb8-intb9;
+                if(intb10<0){
+                    intb10=0;
+                }
 
 
+
+                //calculation
+
+
+
+                if(intb10<=5000){
+                    intb11a_1=0;                    //tax on the first
+                    intb11a=0;                      //charge tax on the first
+                    intb11b_1=intb10-0;             //calculate tax on the balance
+                    intb11b_2=0;                    //tax on the balance rate
+                    intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
+
+                }
+                else if(intb10>5000&&intb10<=20000){
+                    intb11a_1=5000;                 //tax on the first
+                    intb11a=0;                      //charge tax on the first
+                    intb11b_1=intb10-5000;          //calculate tax on the balance
+                    intb11b_2=0.01;                 //tax on the balance rate
+                    intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
+                }
+                else if(intb10>20000&&intb10<=35000){
+                    intb11a_1=20000;                 //tax on the first
+                    intb11a=150;                      //charge tax on the first
+                    intb11b_1=intb10-20000;          //calculate tax on the balance
+                    intb11b_2=0.05;                 //tax on the balance rate
+                    intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
+                }
+                else if(intb10>35000&&intb10<=50000){
+                    intb11a_1=35000;                 //tax on the first
+                    intb11a=900;                      //charge tax on the first
+                    intb11b_1=intb10-35000;          //calculate tax on the balance
+                    intb11b_2=0.1;                 //tax on the balance rate
+                    intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
+                }
+                else if(intb10>50000&&intb10<=70000){
+                    intb11a_1=50000;                 //tax on the first
+                    intb11a=2400;                      //charge tax on the first
+                    intb11b_1=intb10-50000;          //calculate tax on the balance
+                    intb11b_2=0.16;                 //tax on the balance rate
+                    intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
+                }
+                else if(intb10>70000&&intb10<=100000){
+                    intb11a_1=70000;                 //tax on the first
+                    intb11a=5600;                      //charge tax on the first
+                    intb11b_1=intb10-70000;          //calculate tax on the balance
+                    intb11b_2=0.21;                 //tax on the balance rate
+                    intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
+                }
+                else if(intb10>100000&&intb10<=250000){
+                    intb11a_1=100000;                 //tax on the first
+                    intb11a=11900;                      //charge tax on the first
+                    intb11b_1=intb10-100000;          //calculate tax on the balance
+                    intb11b_2=0.24;                 //tax on the balance rate
+                    intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
+                }
+                else if(intb10>250000&&intb10<=400000){
+                    intb11a_1=250000;                 //tax on the first
+                    intb11a=47900;                      //charge tax on the first
+                    intb11b_1=intb10-250000;          //calculate tax on the balance
+                    intb11b_2=0.245;                 //tax on the balance rate
+                    intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
+                }
+                else if(intb10>400000&&intb10<=600000){
+                    intb11a_1=400000;                 //tax on the first
+                    intb11a=84650;                      //charge tax on the first
+                    intb11b_1=intb10-400000;          //calculate tax on the balance
+                    intb11b_2=0.25;                 //tax on the balance rate
+                    intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
+                }
+                else if(intb10>600000&&intb10<=1000000){
+                    intb11a_1=600000;                 //tax on the first
+                    intb11a=134650;                      //charge tax on the first
+                    intb11b_1=intb10-600000;          //calculate tax on the balance
+                    intb11b_2=0.26;                 //tax on the balance rate
+                    intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
+                }
+                else if(intb10>1000000){
+                    intb11a_1=1000000;                 //tax on the first
+                    intb11a=238650;                      //charge tax on the first
+                    intb11b_1=intb10-1000000;          //calculate tax on the balance
+                    intb11b_2=0.28;                 //tax on the balance rate
+                    intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
+                }
+
+                intb12 = intb11a+intb11b;
+                intb14 = intb12 - intb13;
+                if(intb14>intb15) {
+                    intb16 = intb14 - intb15;
+                    intb17 = 0;
+                }
+                else if(intb15>intb14){
+                    intb17 = intb15 - intb14;
+                    intb16 = 0;
+                }
+                if(intb16>intb18){
+                    intb19 = intb16-intb18;
+                }
+                else{
+                    intb19 = intb18-intb16;
+                }
 
             }
             public int calcF(){
@@ -352,13 +585,16 @@ public class Manual_eBE extends AppCompatActivity {
                 intf15b=(int)intf15b_total+(int)intf15c_total;
                 intf15c=(int)intf15d_total+(int)intf15e_total;
 
-                intf20=9000+intf2+intf3+intf4+intf5+intf6+intf7+intf8+intf9+intf10+intf11+intf12+intf13+intf14+intf15a+intf15b+intf15c+intf16+intf17+intf18+intf19;
+                intf20=intf1+intf2+intf3+intf4+intf5+intf6+intf7+intf8+intf9+intf10+intf11+intf12+intf13+intf14+intf15a+intf15b+intf15c+intf16+intf17+intf18+intf19;
 
 
                 return intf20;
             }
 
-        });
+            IncomeTax it= new IncomeTax(intb1, intb2, intb3, intb5, intb7, intb13a, intb13b, intb13c, intf1, intf2, intf3, intf4, intf5, intf6, intf7, intf8, intf9, intf10, intf11, intf12, intf13,  intf14, intf15a_num, intf15b_num, intf15c_num, intf15d_num,  intf15e_num, intf16, intf17, intf18, intf19, intf20, intb4, intb6, intb8, intb9, intb10, intb15a, intb15b, intb13, intb15, intb18, intf15a_total, intf15b_total, intf15c_total, intf15d_total, intf15e_total, intf15a,intf15b,  intf15c,  intb11a_1, intb11b_1,  intb11b_2,  intb11a,  intb11b,  intb12,  intb14,  intb16,  intb17, intb19, stra5, strc1, strc2, strc3,  strc4, strd5, stre1a,  stre1b, stre1c,stre2a, stre2b, stre2c,strg1,  strg2,  strg3, stra4,  stra6,  strd6a, strd6b);
+            DatabaseReference mDatabase;
+            });
+
 
 
 
