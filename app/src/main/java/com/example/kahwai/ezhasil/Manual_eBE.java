@@ -10,8 +10,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Manual_eBE extends AppCompatActivity {
 
@@ -23,9 +28,14 @@ public class Manual_eBE extends AppCompatActivity {
     private RadioGroup a4,a6,d6a,d6b,f15_e;
     private RadioButton rb_a4,rb_a6,rb_d6a,rb_d6b;
     private double eligibility;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        email = firebaseUser.getEmail();
         super.onCreate(savedInstanceState);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -146,6 +156,7 @@ public class Manual_eBE extends AppCompatActivity {
             double intb11a_1,intb11b_1,intb11b_2;
             double intb11a=0,intb11b=0,intb12,intb14,intb16=0,intb17,intb19;
             String stra5,strc1,strc2,strc3,strc4,strd5,stre1a,stre1b,stre1c,stre2a,stre2b,stre2c,strg1,strg2,strg3,stra4,stra6,strd6a,strd6b;
+            String date;
             @Override
             public void onClick(View v) {
 
@@ -179,7 +190,7 @@ public class Manual_eBE extends AppCompatActivity {
                 strd6a = rb_d6a.getText().toString();
                 strd6b = rb_d6b.getText().toString();
 
-                mDatabase.child("Users").child("testing").setValue("1");
+
 
                 if(stra4.equals("Single")){
                     stra4 = "1";
@@ -197,7 +208,7 @@ public class Manual_eBE extends AppCompatActivity {
                     stra4 = "";
                 }
 
-                mDatabase.child("Users").child("testing").setValue("2");
+
 
                 if(stra6.equals("Joint in the name of husband")){
                     stra6 = "1";
@@ -218,7 +229,7 @@ public class Manual_eBE extends AppCompatActivity {
                     stra6 = "";
                 }
 
-                mDatabase.child("Users").child("testing").setValue("3");
+
 
                 if(strd6a.equals("Yes")){
                     strd6a = "1";
@@ -241,7 +252,7 @@ public class Manual_eBE extends AppCompatActivity {
                     strd6b = "";
                 }
 
-                mDatabase.child("Users").child("testing").setValue("4");
+
 
                 if(b1.getText().toString().matches("")){
                     intb1=0;
@@ -301,7 +312,7 @@ public class Manual_eBE extends AppCompatActivity {
                     intb18 = Double.parseDouble(b18.getText().toString());
                 }
 
-                mDatabase.child("Users").child("testing").setValue("5");
+
 
                 if(f2.getText().toString().matches("")){
                     intf2=0;
@@ -466,7 +477,7 @@ public class Manual_eBE extends AppCompatActivity {
                 }
                 //intf20=intb9
 
-                mDatabase.child("Users").child("testing").setValue("6");
+
 
                 intb4 = intb1+intb2+intb3;
                 intb6 = intb4-intb5;
@@ -486,7 +497,7 @@ public class Manual_eBE extends AppCompatActivity {
                 }
 
 
-                mDatabase.child("Users").child("testing").setValue("7");
+
 
                 //calculation
 
@@ -571,7 +582,7 @@ public class Manual_eBE extends AppCompatActivity {
                     intb11b=intb11b_1*intb11b_2;    //charge tax on the balance
                 }
 
-                mDatabase.child("Users").child("testing").setValue("8");
+
 
                 intb12 = intb11a+intb11b;
                 intb14 = intb12 - intb13;
@@ -590,11 +601,11 @@ public class Manual_eBE extends AppCompatActivity {
                     intb19 = intb18-intb16;
                 }
 
-                mDatabase.child("Users").child("testing").setValue("9");
+
                 IncomeTax it = new IncomeTax(intb1, intb2, intb3, intb5, intb7, intb13a, intb13b, intb13c, intf1, intf2, intf3, intf4, intf5, intf6, intf7, intf8, intf9, intf10, intf11, intf12, intf13,  intf14, intf15a_num, intf15b_num, intf15c_num, intf15d_num,  intf15e_num, intf16, intf17, intf18, intf19, intf20, intb4, intb6, intb8, intb9, intb10, intb15a, intb15b, intb13, intb15, intb18, intf15a_total, intf15b_total, intf15c_total, intf15d_total, intf15e_total, intf15a,intf15b,  intf15c,  intb11a_1, intb11b_1,  intb11b_2,  intb11a,  intb11b,  intb12,  intb14,  intb16,  intb17, intb19, stra5, strc1, strc2, strc3,  strc4, strd5, stre1a,  stre1b, stre1c,stre2a, stre2b, stre2c,strg1,  strg2,  strg3, stra4,  stra6,  strd6a, strd6b,eligibility);
 
-                mDatabase.child("Users").child("testing").setValue("Hello");
-                mDatabase.child("Users").child("Testing").setValue(it);
+
+                mDatabase.child("Users").child(EncodeString(email)).child("IncomeTax").setValue(it);
             }
 
             public int calcF(){
@@ -655,6 +666,12 @@ public class Manual_eBE extends AppCompatActivity {
         expandableLayout8 = (ExpandableRelativeLayout) findViewById(R.id.expandableLayout8);
         expandableLayout8.toggle(); // toggle expand and collapse
     }
+    public static String EncodeString(String string) {
+        return string.replace(".", ",");
+    }
 
+    public static String DecodeString(String string) {
+        return string.replace(",", ".");
+    }
 
 }
