@@ -44,15 +44,15 @@
     </string>
 
     <!--Account Activity-->
-    <string name="acc_full_name">Full name as in MyKad</string>
-    <string name="acc_mykad">MyKad No. (without \'-\')</string>
+    <string name="acc_full_name">Full name as in IC</string>
+    <string name="acc_citizen">Citizen code (Eg. MY)</string>
+    <string name="acc_mykad">(without \'-\')</string>
     <string name="acc_Male">Male</string>
     <string name="acc_Female">Female</string>
-    <string name="acc_dob">Date Of Birth (dd/MM/yyyy)</string>
-    <string name="acc_home_phone">Home - Phone No.(without \'-\')</string>
-    <string name="acc_mobile_phone">Mobile - Phone No.(without \'-\')</string>
+    <string name="acc_dob">(DD-MM-YYYY)</string>
+    <string name="acc_mobile_phone">Phone No.(without \'-\')</string>
     <string name="acc_email">Email</string>
-    <string name="acc_passport">Current passport No.</string>
+    <string name="acc_passport">Current Passport No.</string>
     <string name="acc_registered_passport">Passport No. registered with LHDNM</string>
     <string name="acc_income_tax_no">Income Tax No.</string>
     <string name="acc_bank">Bank Name</string>
