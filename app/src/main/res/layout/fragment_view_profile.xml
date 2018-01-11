@@ -1,0 +1,169 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kahwai.ezhasil.FragmentViewProfile">
+
+    <TextView
+        android:id="@+id/personal_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/gothic_bold"
+        android:text="User Profile"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/lbl_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/personal_title"
+        android:layout_marginTop="15dp"
+        android:text="Name:"
+        android:fontFamily="@font/gothic_bold"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/lbl_icNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_name"
+        android:layout_alignStart="@+id/lbl_name"
+        android:layout_below="@+id/lbl_name"
+        android:layout_marginTop="15dp"
+        android:text="IC No:"
+        android:fontFamily="@font/gothic_bold"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/lbl_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_icNo"
+        android:layout_alignStart="@+id/lbl_icNo"
+        android:layout_below="@+id/lbl_icNo"
+        android:layout_marginTop="15dp"
+        android:text="Gender:"
+        android:fontFamily="@font/gothic_bold"
+        android:textColor="@color/black"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/lbl_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_gender"
+        android:layout_alignStart="@+id/lbl_gender"
+        android:layout_below="@+id/lbl_gender"
+        android:layout_marginTop="15dp"
+        android:text="Email:"
+        android:fontFamily="@font/gothic_bold"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/lbl_incomeTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_email"
+        android:layout_alignStart="@+id/lbl_email"
+        android:layout_below="@+id/lbl_email"
+        android:layout_marginTop="15dp"
+        android:text="Income Tax No:"
+        android:fontFamily="@font/gothic_bold"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/extra_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Additional Information"
+        android:fontFamily="@font/gothic_bold"
+        android:textColor="@color/black"
+        android:textSize="25sp"/>
+
+
+</RelativeLayout>
+<!--<TextView-->
+<!--android:id="@+id/lblName"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_alignParentLeft="true"-->
+<!--android:layout_alignParentStart="true"-->
+<!--android:layout_alignParentTop="true"-->
+<!--android:layout_marginLeft="13dp"-->
+<!--android:layout_marginTop="13dp"-->
+<!--android:fontFamily="@font/gothic_bold"-->
+<!--android:text="Name:"-->
+<!--android:textColor="@color/black"-->
+<!--android:textSize="20sp" />-->
+
+<!--<TextView-->
+<!--android:id="@+id/tvName"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_alignBottom="@+id/lblName"-->
+<!--android:layout_marginLeft="26dp"-->
+<!--android:layout_marginStart="26dp"-->
+<!--android:layout_toEndOf="@+id/lblName"-->
+<!--android:layout_toRightOf="@+id/lblName"-->
+<!--android:fontFamily="@font/gothic_bold"-->
+<!--android:textColor="@color/black"-->
+<!--android:textSize="20sp"/>-->
+
+<!--<TextView-->
+<!--android:id="@+id/lblGender"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_alignLeft="@+id/lblName"-->
+<!--android:layout_alignStart="@+id/lblName"-->
+<!--android:layout_below="@+id/lblName"-->
+<!--android:layout_marginTop="13dp"-->
+<!--android:fontFamily="@font/gothic_bold"-->
+<!--android:text="Gender:"-->
+<!--android:textColor="@color/black"-->
+<!--android:textSize="20sp" />-->
+
+<!--<TextView-->
+<!--android:id="@+id/tvGender"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_alignTop="@+id/lblGender"-->
+<!--android:layout_toEndOf="@+id/tvName"-->
+<!--android:layout_toRightOf="@+id/tvName"-->
+<!--android:fontFamily="@font/gothic_bold"-->
+<!--android:textColor="@color/black"-->
+<!--android:textSize="20sp"/>-->
+
+<!--<TextView-->
+<!--android:id="@+id/lblICno"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_alignLeft="@+id/lblGender"-->
+<!--android:layout_alignStart="@+id/lblGender"-->
+<!--android:layout_below="@+id/lblGender"-->
+<!--android:layout_marginTop="13dp"-->
+<!--android:text="IC No."-->
+<!--android:fontFamily="@font/gothic_bold"-->
+<!--android:textColor="@color/black"-->
+<!--android:textSize="20sp" />-->
+
+<!--<TextView-->
+<!--android:id="@+id/tvICno"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_alignTop="@+id/lblICno"-->
+<!--android:layout_toEndOf="@+id/tvGender"-->
+<!--android:layout_toRightOf="@+id/tvGender"-->
+<!--android:fontFamily="@font/gothic_bold"-->
+<!--android:textColor="@color/black"-->
+<!--android:textSize="20sp" />-->

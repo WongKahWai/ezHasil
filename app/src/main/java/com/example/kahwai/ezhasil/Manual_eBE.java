@@ -11,10 +11,10 @@ import android.widget.RadioGroup;
 
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class Manual_eBE extends AppCompatActivity {
 
+    private DatabaseReference mDatabase;
     ExpandableRelativeLayout expandableLayout1, expandableLayout2, expandableLayout3, expandableLayout4, expandableLayout5, expandableLayout6,expandableLayout8;
     private Button btnSubmit;
     private EditText a5,b1,b2,b3,b5,b7,b13a,b13b,b13c,b15a,b15b,b18,c1,c2,c3,c4,d5,e1a,e1b,e1c,e2a,e2b,e2c;
@@ -26,7 +26,6 @@ public class Manual_eBE extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         setContentView(R.layout.activity_manual_e_be);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -572,8 +571,11 @@ public class Manual_eBE extends AppCompatActivity {
                 else{
                     intb19 = intb18-intb16;
                 }
+                IncomeTax it = new IncomeTax(intb1, intb2, intb3, intb5, intb7, intb13a, intb13b, intb13c, intf1, intf2, intf3, intf4, intf5, intf6, intf7, intf8, intf9, intf10, intf11, intf12, intf13,  intf14, intf15a_num, intf15b_num, intf15c_num, intf15d_num,  intf15e_num, intf16, intf17, intf18, intf19, intf20, intb4, intb6, intb8, intb9, intb10, intb15a, intb15b, intb13, intb15, intb18, intf15a_total, intf15b_total, intf15c_total, intf15d_total, intf15e_total, intf15a,intf15b,  intf15c,  intb11a_1, intb11b_1,  intb11b_2,  intb11a,  intb11b,  intb12,  intb14,  intb16,  intb17, intb19, stra5, strc1, strc2, strc3,  strc4, strd5, stre1a,  stre1b, stre1c,stre2a, stre2b, stre2c,strg1,  strg2,  strg3, stra4,  stra6,  strd6a, strd6b);
 
+                mDatabase.child("Users").child("Testing").setValue(it);
             }
+
             public int calcF(){
 
                 intf15a_total=intf15a_num*2000*eligibility;
@@ -591,8 +593,8 @@ public class Manual_eBE extends AppCompatActivity {
                 return intf20;
             }
 
-            IncomeTax it= new IncomeTax(intb1, intb2, intb3, intb5, intb7, intb13a, intb13b, intb13c, intf1, intf2, intf3, intf4, intf5, intf6, intf7, intf8, intf9, intf10, intf11, intf12, intf13,  intf14, intf15a_num, intf15b_num, intf15c_num, intf15d_num,  intf15e_num, intf16, intf17, intf18, intf19, intf20, intb4, intb6, intb8, intb9, intb10, intb15a, intb15b, intb13, intb15, intb18, intf15a_total, intf15b_total, intf15c_total, intf15d_total, intf15e_total, intf15a,intf15b,  intf15c,  intb11a_1, intb11b_1,  intb11b_2,  intb11a,  intb11b,  intb12,  intb14,  intb16,  intb17, intb19, stra5, strc1, strc2, strc3,  strc4, strd5, stre1a,  stre1b, stre1c,stre2a, stre2b, stre2c,strg1,  strg2,  strg3, stra4,  stra6,  strd6a, strd6b);
-            DatabaseReference mDatabase;
+
+
             });
 
 
