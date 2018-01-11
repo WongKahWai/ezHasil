@@ -52,10 +52,11 @@ public class SelfNoteFragment extends Fragment {
     private Button mSaveButton, buttonCreate;
     private String LOG_TAG;
     private File myFile;
-    private FirebaseDatabase db;
+    private FirebaseDatabase db,db2;
     private FirebaseAuth auth;
     private FirebaseUser user;
     private User user_data;
+    private IncomeTax income_tax;
     public SelfNoteFragment() {
         // Required empty public constructor
     }
@@ -75,15 +76,30 @@ public class SelfNoteFragment extends Fragment {
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
+        db2 = FirebaseDatabase.getInstance();
 
         user = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference ref = db.getReference().child("Users").child(EncodeString(user.getEmail()));
+        DatabaseReference ref = db.getReference().child("Users").child(EncodeString(user.getEmail())).child("Profile");
+        DatabaseReference ref2 = db2.getReference().child("Users").child(EncodeString(user.getEmail())).child("IncomeTax");
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 user_data =  dataSnapshot.getValue(User.class);
                 System.out.println(user_data);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
+
+        ref2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                income_tax =  dataSnapshot.getValue(IncomeTax.class);
+                System.out.println(income_tax);
             }
 
             @Override
@@ -127,6 +143,7 @@ public class SelfNoteFragment extends Fragment {
             AcroFields acroFields = stamper.getAcroFields();
             acroFields.setField("D2", user.getEmail().toString());
             acroFields.setField("D1a", user_data.getHomePhoneNo().toString());
+            acroFields.setField("B1", String.valueOf(income_tax.getIntb1()));
 
             stamper.setFormFlattening(true);
             stamper.close();

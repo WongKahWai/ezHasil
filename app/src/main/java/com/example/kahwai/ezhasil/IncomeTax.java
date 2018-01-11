@@ -17,6 +17,9 @@ public class IncomeTax {
     String stra5,strc1,strc2,strc3,strc4,strd5,stre1a,stre1b,stre1c,stre2a,stre2b,stre2c,strg1,strg2,strg3,stra4,stra6,strd6a,strd6b;
     double intf15_eligibility;
 
+    public IncomeTax() {
+    }
+
     public int getIntb1() {
         return intb1;
     }
