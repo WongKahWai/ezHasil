@@ -18,6 +18,10 @@ public class User {
     public String incomeTaxNo, passportNo, registeredPassport;
     public String bankName, bankAccountNo;
 
+    public User(){
+
+    }
+
     public User(String email){
         this.email = email;
     }

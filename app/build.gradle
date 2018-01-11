@@ -30,7 +30,7 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:11.8.0'
     compile 'com.google.firebase:firebase-database:11.8.0'
     compile 'com.github.aakira:expandable-layout:1.4.2@aar'
-    compileOnly 'com.itextpdf:itext-pdfa:5.5.5'
+    compile 'com.itextpdf:itextg:5.5.10'
 }
 
 apply plugin: 'com.google.gms.google-services'
