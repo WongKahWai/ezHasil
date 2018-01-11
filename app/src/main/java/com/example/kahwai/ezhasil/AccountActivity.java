@@ -6,8 +6,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -18,9 +16,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AccountActivity extends AppCompatActivity {
 
-    FragmentAccountEdit saveFragment;
-
-    private Button btnSave;
     private DatabaseReference mDatabase;
     private String emailUser;
 
@@ -60,7 +55,7 @@ public class AccountActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                System.out.println("The read failed: " + databaseError.getCode());
             }
         });
 

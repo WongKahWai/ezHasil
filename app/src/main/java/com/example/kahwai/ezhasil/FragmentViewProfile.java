@@ -3,11 +3,13 @@ package com.example.kahwai.ezhasil;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +25,7 @@ public class FragmentViewProfile extends Fragment {
     private DatabaseReference mDatabase;
     private View rootView;
 
-    private TextView tvName, tvIcNo, tvGender, tvEmail, tvMobile, tvHome, tvIncomeTax, tvPassport, tvRegistered, tvBank, tvBankAccount;
+    private TextView tvName, tvIcNo, tvGender, tvEmail, tvMobile, tvHome, tvIncomeTax, tvPassport, tvRegistered, tvBank, tvBankAccount, tvEdit;
 
     private String emailUser;
     @Override
@@ -42,6 +44,18 @@ public class FragmentViewProfile extends Fragment {
         tvRegistered = (TextView)rootView.findViewById(R.id.tv_registeredPassport);
         tvBank = (TextView)rootView.findViewById(R.id.tv_bank);
         tvBankAccount = (TextView)rootView.findViewById(R.id.tv_bankAccount);
+
+        tvEdit = (TextView)rootView.findViewById(R.id.tv_edit);
+        tvEdit.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_layout, new FragmentAccountEdit());
+                ft.commit();
+
+                return true;
+            }
+        });
 
         //Get firebase user
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
