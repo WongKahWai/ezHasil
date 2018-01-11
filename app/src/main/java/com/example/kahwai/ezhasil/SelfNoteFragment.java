@@ -124,14 +124,14 @@ public class SelfNoteFragment extends Fragment {
         File folder = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/ezHasil/");
         if(!folder.exists()){
             folder.mkdir();
-            System.out.println(folder);
         }
+        System.out.println(folder);
 
         File path = new File(folder,"result.pdf");
         if(!path.exists()){
             path.createNewFile();
-            System.out.println(path);
         }
+        System.out.println(folder);
 
         Date date = new Date() ;
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(date);
@@ -151,6 +151,7 @@ public class SelfNoteFragment extends Fragment {
 
             stamper.setFormFlattening(true);
             stamper.close();
+            System.out.println("Done");
         }catch(FileNotFoundException e){
             Log.e("Ex==",""+e.toString());
         }
@@ -159,7 +160,7 @@ public class SelfNoteFragment extends Fragment {
 /*        document.add(new Paragraph(mSubjectEditText.getText().toString()));
         document.add(new Paragraph(mBodyEditText.getText().toString()));*/
 
-        viewPdf();
+        //viewPdf();
     }
 
     private void viewPdf(){
