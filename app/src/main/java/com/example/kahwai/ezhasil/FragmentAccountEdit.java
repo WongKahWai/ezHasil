@@ -112,10 +112,10 @@ public class FragmentAccountEdit extends Fragment implements View.OnClickListene
         else if(TextUtils.isEmpty(bankAccount))
             edtBankAccount.setError(getString(R.string.error_field_required));
         else {
-            User user = new User(email, full_name, citizen, gender, strDate, home, mobile, ic, incomeTax, passport, registeredPassport, bank, bankAccount);
+            User user = new User(email, full_name, citizen, gender, strDate, mobile, home, ic, incomeTax, passport, registeredPassport, bank, bankAccount);
 
             //Store in firebase database
-            mDatabase.child("Users").child(EncodeString(email)).setValue(user);
+            mDatabase.child("Users").child(EncodeString(email)).child("Profile").setValue(user);
         }
     }
 
