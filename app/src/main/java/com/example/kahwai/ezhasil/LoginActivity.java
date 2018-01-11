@@ -169,7 +169,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
+
 
 
             auth.signInWithEmailAndPassword(email,password)
@@ -188,6 +188,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                         }
                     } else {
+                        showProgress(true);
                         Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                         startActivity(intent);
                         finish();
