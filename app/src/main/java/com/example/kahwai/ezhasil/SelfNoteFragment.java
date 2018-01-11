@@ -145,9 +145,165 @@ public class SelfNoteFragment extends Fragment {
             PdfReader reader = new PdfReader(getResources().openRawResource(R.raw.form_be2016));
             PdfStamper stamper = new PdfStamper(reader, output);
             AcroFields acroFields = stamper.getAcroFields();
+
+            acroFields.setField("name", String.valueOf(user_data.getName()));
+            acroFields.setField("income_tax_no", String.valueOf(user_data.getIncomeTaxNo()));
+            acroFields.setField("identification_no", String.valueOf(user_data.getIcNo()));
+            acroFields.setField("passport_no", String.valueOf(user_data.getPassportNo()));
+            acroFields.setField("passport_no_reg", String.valueOf(user_data.getRegisteredPassport()));
+            acroFields.setField("citizen", String.valueOf(user_data.getCitizen()));
+            acroFields.setField("sex", String.valueOf(user_data.getSex()));
+            acroFields.setField("date_of_birth", String.valueOf(user_data.getDob()));
+            acroFields.setField("marital_status", String.valueOf(income_tax.getStra4()));
+            acroFields.setField("date_of_marriage", String.valueOf(income_tax.getStra5()));
+            acroFields.setField("type_of_assessment", String.valueOf(income_tax.getStra6()));
             acroFields.setField("B1", String.valueOf(income_tax.getIntb1()));
-            acroFields.setField("D2", user.getEmail().toString());
-            acroFields.setField("D1a", user_data.getHomePhoneNo().toString());
+            acroFields.setField("B2", String.valueOf(income_tax.getIntb2()));
+            acroFields.setField("B3", String.valueOf(income_tax.getIntb3()));
+            acroFields.setField("B4", String.valueOf(income_tax.getIntb4()));
+            acroFields.setField("B5", String.valueOf(income_tax.getIntb5()));
+            acroFields.setField("B6", String.valueOf(income_tax.getIntb6()));
+            acroFields.setField("B7", String.valueOf(income_tax.getIntb7()));
+            acroFields.setField("B8", String.valueOf(income_tax.getIntb8()));
+            acroFields.setField("B9", String.valueOf(income_tax.getIntb9()));
+            acroFields.setField("B10", String.valueOf(income_tax.getIntb10()));
+            acroFields.setField("B11", String.valueOf(income_tax.getIntb11a_1()));
+            acroFields.setField("B11a", String.valueOf(income_tax.getIntb11a()));
+            acroFields.setField("B11b", String.valueOf(income_tax.getIntb11b()));
+            acroFields.setField("B11b1", String.valueOf(income_tax.getIntb11b_1()));
+            acroFields.setField("B11bRate", String.valueOf(income_tax.getIntb11b_2())); //need to convert to percent
+            acroFields.setField("B12", String.valueOf(income_tax.getIntb12()));
+            acroFields.setField("B13", String.valueOf(income_tax.getIntb13()));
+            acroFields.setField("B13a", String.valueOf(income_tax.getIntb13a()));
+            acroFields.setField("B13b", String.valueOf(income_tax.getIntb13b()));
+            acroFields.setField("B13c", String.valueOf(income_tax.getIntb13c()));
+            acroFields.setField("B14", String.valueOf(income_tax.getIntb14()));
+            acroFields.setField("B15", String.valueOf(income_tax.getIntb15()));
+            acroFields.setField("B15a", String.valueOf(income_tax.getIntb15a()));
+            acroFields.setField("B15b", String.valueOf(income_tax.getIntb15b()));
+            acroFields.setField("B16", String.valueOf(income_tax.getIntb16()));
+            acroFields.setField("B17", String.valueOf(income_tax.getIntb17()));
+            acroFields.setField("B18", String.valueOf(income_tax.getIntb18()));
+            acroFields.setField("B19", String.valueOf(income_tax.getIntb19()));
+            acroFields.setField("declaration_name", String.valueOf(user_data.getName()));
+            acroFields.setField("ic_passport", String.valueOf(user_data.getIcNo()));
+            acroFields.setField("C1", String.valueOf(income_tax.getStrc1()));
+            acroFields.setField("C2", String.valueOf(income_tax.getStrc2()));
+            acroFields.setField("C3", String.valueOf(income_tax.getStrc3()));
+            acroFields.setField("C4", String.valueOf(income_tax.getStrc4()));
+            acroFields.setField("name2", String.valueOf(user_data.getName()));
+            acroFields.setField("income_tax_no2", String.valueOf(user_data.getIncomeTaxNo()));
+            acroFields.setField("D1a", String.valueOf(user_data.getHomePhoneNo()));
+            acroFields.setField("D1b", String.valueOf(user_data.getPhoneNo()));
+            acroFields.setField("D2", String.valueOf(user_data.getEmail()));
+            acroFields.setField("D3", String.valueOf(user_data.getBankName()));
+            acroFields.setField("D4", String.valueOf(user_data.getBankAccountNo()));
+            acroFields.setField("D5", String.valueOf(income_tax.getStrd5()));
+            acroFields.setField("D6a", String.valueOf(income_tax.getStrd6a()));
+            acroFields.setField("D6b", String.valueOf(income_tax.getStrd6b()));
+            acroFields.setField("E1a", String.valueOf(income_tax.getStre1a()));
+            acroFields.setField("E1b", String.valueOf(income_tax.getStre1b()));
+            acroFields.setField("E1c", String.valueOf(income_tax.getStre1c()));
+            acroFields.setField("E2a", String.valueOf(income_tax.getStre2a()));
+            acroFields.setField("E2b", String.valueOf(income_tax.getStre2b()));
+            acroFields.setField("E2c", String.valueOf(income_tax.getStre2c()));
+            acroFields.setField("F2a", String.valueOf(income_tax.getIntf2()));
+            acroFields.setField("F2", String.valueOf(income_tax.getIntf2()));
+            acroFields.setField("F3", String.valueOf(income_tax.getIntf3()));
+            acroFields.setField("F4", String.valueOf(income_tax.getIntf4()));
+            acroFields.setField("F5", String.valueOf(income_tax.getIntf5()));
+            acroFields.setField("F6", String.valueOf(income_tax.getIntf6()));
+            acroFields.setField("F7", String.valueOf(income_tax.getIntf7()));
+            acroFields.setField("F8", String.valueOf(income_tax.getIntf8()));
+            acroFields.setField("F9", String.valueOf(income_tax.getIntf9()));
+            acroFields.setField("F10", String.valueOf(income_tax.getIntf10()));
+            acroFields.setField("F11", String.valueOf(income_tax.getIntf11()));
+            acroFields.setField("F12", String.valueOf(income_tax.getIntf12()));
+            acroFields.setField("F13", String.valueOf(income_tax.getIntf13()));
+            acroFields.setField("F14", String.valueOf(income_tax.getIntf14()));
+            acroFields.setField("F15a", String.valueOf(income_tax.getIntf15a()));
+            acroFields.setField("F15b", String.valueOf(income_tax.getIntf15b()));
+            acroFields.setField("F15c", String.valueOf(income_tax.getIntf15c()));
+            acroFields.setField("F16", String.valueOf(income_tax.getIntf16()));
+            acroFields.setField("F17", String.valueOf(income_tax.getIntf17()));
+            acroFields.setField("F18", String.valueOf(income_tax.getIntf18()));
+            acroFields.setField("F19", String.valueOf(income_tax.getIntf19()));
+            acroFields.setField("F20", String.valueOf(income_tax.getIntf20()));
+            acroFields.setField("G1", String.valueOf(income_tax.getStrg1()));
+            acroFields.setField("G2", String.valueOf(income_tax.getStrg2()));
+            acroFields.setField("G3", String.valueOf(income_tax.getStrg3()));
+
+            if(income_tax.getIntf15_eligibility()==1){
+                acroFields.setField("F15a100No", String.valueOf(income_tax.getIntf15a_num()));
+                acroFields.setField("F15b100No1", String.valueOf(income_tax.getIntf15b_num()));
+                acroFields.setField("F15b100No2", String.valueOf(income_tax.getIntf15c_num()));
+                acroFields.setField("F15c100No1", String.valueOf(income_tax.getIntf15d_num()));
+                acroFields.setField("F15c100No2", String.valueOf(income_tax.getIntf15e_num()));
+                acroFields.setField("F15a100Amount", String.valueOf(income_tax.getIntf15a_total()));
+                acroFields.setField("F15b100Amount1", String.valueOf(income_tax.getIntf15b_total()));
+                acroFields.setField("F15b100Amount2", String.valueOf(income_tax.getIntf15c_total()));
+                acroFields.setField("F15c100Amount1", String.valueOf(income_tax.getIntf15d_total()));
+                acroFields.setField("F15c100Amount2", String.valueOf(income_tax.getIntf15e_total()));
+
+                acroFields.setField("F15a50No", "0");
+                acroFields.setField("F15b50No1", "0");
+                acroFields.setField("F15b50No2", "0");
+                acroFields.setField("F15c50No1", "0");
+                acroFields.setField("F15c50No2", "0");
+                acroFields.setField("F15a50Amount", "0");
+                acroFields.setField("F15b50Amount1", "0");
+                acroFields.setField("F15b50Amount2", "0");
+                acroFields.setField("F15c50Amount1", "0");
+                acroFields.setField("F15c50Amount2", "0");
+
+            }else if(income_tax.getIntf15_eligibility()==0.5){
+                acroFields.setField("F15a50No", String.valueOf(income_tax.getIntf15a_num()));
+                acroFields.setField("F15b50No1", String.valueOf(income_tax.getIntf15b_num()));
+                acroFields.setField("F15b50No2", String.valueOf(income_tax.getIntf15c_num()));
+                acroFields.setField("F15c50No1", String.valueOf(income_tax.getIntf15d_num()));
+                acroFields.setField("F15c50No2", String.valueOf(income_tax.getIntf15e_num()));
+                acroFields.setField("F15a50Amount", String.valueOf(income_tax.getIntf15a_total()));
+                acroFields.setField("F15b50Amount1", String.valueOf(income_tax.getIntf15b_total()));
+                acroFields.setField("F15b50Amount2", String.valueOf(income_tax.getIntf15c_total()));
+                acroFields.setField("F15c50Amount1", String.valueOf(income_tax.getIntf15d_total()));
+                acroFields.setField("F15c50Amount2", String.valueOf(income_tax.getIntf15e_total()));
+
+                acroFields.setField("F15a100No", "0");
+                acroFields.setField("F15b100No1", "0");
+                acroFields.setField("F15b100No2", "0");
+                acroFields.setField("F15c100No1", "0");
+                acroFields.setField("F15c100No2", "0");
+                acroFields.setField("F15a100Amount", "0");
+                acroFields.setField("F15b100Amount1", "0");
+                acroFields.setField("F15b100Amount2", "0");
+                acroFields.setField("F15c100Amount1", "0");
+                acroFields.setField("F15c100Amount2", "0");
+            }else{
+                acroFields.setField("F15a100No", "0");
+                acroFields.setField("F15b100No1", "0");
+                acroFields.setField("F15b100No2", "0");
+                acroFields.setField("F15c100No1", "0");
+                acroFields.setField("F15c100No2", "0");
+                acroFields.setField("F15a100Amount", "0");
+                acroFields.setField("F15b100Amount1", "0");
+                acroFields.setField("F15b100Amount2", "0");
+                acroFields.setField("F15c100Amount1", "0");
+                acroFields.setField("F15c100Amount2", "0");
+
+                acroFields.setField("F15a50No", "0");
+                acroFields.setField("F15b50No1", "0");
+                acroFields.setField("F15b50No2", "0");
+                acroFields.setField("F15c50No1", "0");
+                acroFields.setField("F15c50No2", "0");
+                acroFields.setField("F15a50Amount", "0");
+                acroFields.setField("F15b50Amount1", "0");
+                acroFields.setField("F15b50Amount2", "0");
+                acroFields.setField("F15c50Amount1", "0");
+                acroFields.setField("F15c50Amount2", "0");
+            }
+
+
+
 
             stamper.setFormFlattening(true);
             stamper.close();
