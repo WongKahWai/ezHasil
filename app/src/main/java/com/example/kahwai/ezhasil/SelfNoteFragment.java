@@ -55,7 +55,7 @@ public class SelfNoteFragment extends Fragment {
     private FirebaseDatabase db;
     private FirebaseAuth auth;
     private FirebaseUser user;
-
+    private User user_data;
     public SelfNoteFragment() {
         // Required empty public constructor
     }
@@ -82,8 +82,8 @@ public class SelfNoteFragment extends Fragment {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-                System.out.println(user);
+                user_data =  dataSnapshot.getValue(User.class);
+                System.out.println(user_data);
             }
 
             @Override
@@ -107,40 +107,18 @@ public class SelfNoteFragment extends Fragment {
     }
 
     private void createPdf() throws IOException, DocumentException, FileNotFoundException {
-       /* String pdfFolder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/ezHasil";
-        File dir = new File(pdfFolder);
 
-
-        if (!dir.exists()) {
-            dir.mkdirs();
-            Log.i(LOG_TAG, "Pdf Directory created");
-            System.out.println(dir);
-        }
-*/        /*File pdfFolder = new File(Context.getExtrernalFilesDirs(),"ezHasil");
-        if (!pdfFolder.exists()) {
-            pdfFolder.mkdir();
-            Log.i(LOG_TAG, "Pdf Directory created");
-        }*/
         File folder = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/ezHasil/");
         if(!folder.exists()){
             folder.mkdir();
         }
-        System.out.println(folder);
 
         File path = new File(folder,"result.pdf");
         if(!path.exists()){
             path.createNewFile();
         }
-        System.out.println(folder);
-
         Date date = new Date() ;
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(date);
-
-      /*  File myFile = new File(dir, timeStamp + ".pdf");
-
-        System.out.println(myFile);
-*/
-//        OutputStream output = new FileOutputStream(myFile.getAbsolutePath());
 
         try{
             OutputStream output = new FileOutputStream(path);
@@ -148,6 +126,7 @@ public class SelfNoteFragment extends Fragment {
             PdfStamper stamper = new PdfStamper(reader, output);
             AcroFields acroFields = stamper.getAcroFields();
             acroFields.setField("D2", user.getEmail().toString());
+            acroFields.setField("D1a", user_data.getHomePhoneNo().toString());
 
             stamper.setFormFlattening(true);
             stamper.close();
@@ -155,10 +134,6 @@ public class SelfNoteFragment extends Fragment {
         }catch(FileNotFoundException e){
             Log.e("Ex==",""+e.toString());
         }
-
-        //Step 4 Add content
-/*        document.add(new Paragraph(mSubjectEditText.getText().toString()));
-        document.add(new Paragraph(mBodyEditText.getText().toString()));*/
 
         //viewPdf();
     }
