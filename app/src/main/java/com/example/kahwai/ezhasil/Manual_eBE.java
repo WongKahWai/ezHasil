@@ -600,10 +600,10 @@ public class Manual_eBE extends AppCompatActivity {
             public int calcF(){
 
                 intf15a_total=intf15a_num*2000*eligibility;
-                intf15b_total=intf15a_num*2000*eligibility;
-                intf15c_total=intf15a_num*8000*eligibility;
-                intf15d_total=intf15a_num*6000*eligibility;
-                intf15e_total=intf15a_num*14000*eligibility;
+                intf15b_total=intf15b_num*2000*eligibility;
+                intf15c_total=intf15c_num*8000*eligibility;
+                intf15d_total=intf15d_num*6000*eligibility;
+                intf15e_total=intf15e_num*14000*eligibility;
                 intf15a=(int)intf15a_total;
                 intf15b=(int)intf15b_total+(int)intf15c_total;
                 intf15c=(int)intf15d_total+(int)intf15e_total;

@@ -1161,7 +1161,7 @@
                             android:background="@drawable/textbox_email"
                             android:inputType="number"
                             android:fontFamily="@font/gothic"
-                            android:hint="Restricted to RM6000"
+                            android:hint="Restricted to RM6000 with total of medical exam"
                             android:maxLines="1"
                             android:paddingLeft="10dp"
                             android:singleLine="true" />
