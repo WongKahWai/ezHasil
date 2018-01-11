@@ -20,11 +20,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
         android:layout_below="@+id/title_personal"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
-        android:text="Name:"
+        android:layout_toLeftOf="@+id/title_personal"
+        android:layout_toStartOf="@+id/title_personal"
         android:fontFamily="@font/gothic_bold"
+        android:text="Name:"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
@@ -36,8 +38,10 @@
         android:layout_alignStart="@+id/lbl_name"
         android:layout_below="@+id/lbl_name"
         android:layout_marginTop="15dp"
-        android:text="IC No:"
+        android:layout_toLeftOf="@+id/title_personal"
+        android:layout_toStartOf="@+id/title_personal"
         android:fontFamily="@font/gothic_bold"
+        android:text="IC No:"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
@@ -49,10 +53,12 @@
         android:layout_alignStart="@+id/lbl_icNo"
         android:layout_below="@+id/lbl_icNo"
         android:layout_marginTop="15dp"
-        android:text="Gender:"
+        android:layout_toLeftOf="@+id/title_personal"
+        android:layout_toStartOf="@+id/title_personal"
         android:fontFamily="@font/gothic_bold"
+        android:text="Gender:"
         android:textColor="@color/black"
-        android:textSize="15dp"/>
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/lbl_email"
@@ -62,8 +68,10 @@
         android:layout_alignStart="@+id/lbl_gender"
         android:layout_below="@+id/lbl_gender"
         android:layout_marginTop="15dp"
-        android:text="Email:"
+        android:layout_toLeftOf="@+id/title_personal"
+        android:layout_toStartOf="@+id/title_personal"
         android:fontFamily="@font/gothic_bold"
+        android:text="Email:"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
@@ -105,6 +113,47 @@
         android:fontFamily="@font/gothic_bold_italic"
         android:textColor="@color/black"
         android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/lbl_passport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/lbl_incomeTax"
+        android:layout_alignLeft="@+id/title_passport"
+        android:layout_alignRight="@+id/lbl_incomeTax"
+        android:layout_alignStart="@+id/title_passport"
+        android:layout_below="@+id/title_passport"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/gothic_bold"
+        android:text="Current:"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/lbl_registered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/lbl_incomeTax"
+        android:layout_alignLeft="@+id/lbl_passport"
+        android:layout_alignRight="@+id/lbl_incomeTax"
+        android:layout_alignStart="@+id/lbl_passport"
+        android:layout_below="@+id/lbl_passport"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/gothic_bold"
+        android:minLines="2"
+        android:text="Registered with LHDNM:"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_registered"
+        android:layout_alignStart="@+id/lbl_registered"
+        android:layout_below="@+id/lbl_registered"
+        android:layout_marginTop="18dp"
+        android:text="TextView" />
 
 
 </RelativeLayout>
