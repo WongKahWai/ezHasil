@@ -1,5 +1,10 @@
 package com.example.kahwai.ezhasil;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by user on 11/1/2018.
  */
@@ -16,8 +21,25 @@ public class IncomeTax {
     double intb11a,intb11b,intb12,intb14,intb16=0,intb17,intb19;
     String stra5,strc1,strc2,strc3,strc4,strd5,stre1a,stre1b,stre1c,stre2a,stre2b,stre2c,strg1,strg2,strg3,stra4,stra6,strd6a,strd6b;
     double intf15_eligibility;
+    String submit_status,submit_date;
 
     public IncomeTax() {
+    }
+
+    public String getSubmit_status() {
+        return submit_status;
+    }
+
+    public void setSubmit_status(String submit_status) {
+        this.submit_status = submit_status;
+    }
+
+    public String getSubmit_date() {
+        return submit_date;
+    }
+
+    public void setSubmit_date(String submit_date) {
+        this.submit_date = submit_date;
     }
 
     public int getIntb1() {
@@ -422,5 +444,12 @@ public class IncomeTax {
         this.strd6a = strd6a;
         this.strd6b = strd6b;
         this.intf15_eligibility = intf15_eligibility;
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
+        String formattedDate = df.format(c.getTime());;
+
+        this.submit_date = formattedDate;
+        this.submit_status = "Drafted";
     }
 }

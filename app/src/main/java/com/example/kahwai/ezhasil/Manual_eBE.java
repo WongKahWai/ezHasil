@@ -1,5 +1,6 @@
 package com.example.kahwai.ezhasil;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -107,7 +108,6 @@ public class Manual_eBE extends AppCompatActivity {
             g3 = (EditText) findViewById(R.id.g3);
 
             btnSubmit = (Button) findViewById(R.id.btnSubmit);
-
 
             d6b.setVisibility(View.INVISIBLE);
             d6a.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -606,6 +606,7 @@ public class Manual_eBE extends AppCompatActivity {
 
 
                 mDatabase.child("Users").child(EncodeString(email)).child("IncomeTax").setValue(it);
+                startActivity(new Intent(Manual_eBE.this, GeneratePDFActivity.class));
             }
 
             public int calcF(){
