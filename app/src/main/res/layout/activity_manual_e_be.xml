@@ -129,7 +129,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="Single"/>
+                            android:text="Single"
+                            android:checked="true"/>
 
                         <RadioButton
                             android:id="@+id/a4_2"
@@ -229,6 +230,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="10dp"
                                 android:text="Self (Single/Divorcee/Widow/Widower/Deceased)"
+                                android:checked="true"
                                 />
                         </RadioGroup>
                         <TextView
@@ -395,7 +397,153 @@
                             android:maxLines="1"
                             android:paddingLeft="10dp"
                             android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
 
+                            android:singleLine="true"
+                            android:text="Total rebate for self"/>
+                        <EditText
+                            android:id="@+id/b13a"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="number"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/gothic"
+                        android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+
+                        android:singleLine="true"
+                        android:text="Total rebate for spouse"/>
+                        <EditText
+                            android:id="@+id/b13b"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="number"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+
+                            android:singleLine="true"
+                            android:text="Total rebate for Zakat and Fitrah"/>
+                        <EditText
+                            android:id="@+id/b13c"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="number"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Section 110 (others)"/>
+                        <EditText
+                            android:id="@+id/b15a"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="number"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Section 132 and 133"/>
+                        <EditText
+                            android:id="@+id/b15b"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="number"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
+                            android:singleLine="true"
+                            android:text="Instalments / Monthly Tax Deductions paid for 2016 income (joint assessment)"/>
+                        <EditText
+                            android:id="@+id/b18"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/textbox_email"
+                            android:fontFamily="@font/gothic"
+                            android:inputType="number"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -619,7 +767,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="10dp"
-                                android:text="No"/>
+                                android:text="No"
+                                android:checked="true"/>
 
                         </RadioGroup>
                         <RadioGroup
@@ -654,7 +803,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="10dp"
-                                android:text="No"/>
+                                android:text="No"
+                                android:checked="true"/>
 
                         </RadioGroup>
 
@@ -1011,7 +1161,7 @@
                             android:background="@drawable/textbox_email"
                             android:inputType="number"
                             android:fontFamily="@font/gothic"
-                            android:hint="Restricted to RM6000"
+                            android:hint="Restricted to RM6000 with total of medical exam"
                             android:maxLines="1"
                             android:paddingLeft="10dp"
                             android:singleLine="true" />
@@ -1096,7 +1246,8 @@
                             android:elevation="0dp"
                             android:fontFamily="@font/gothic"
                             android:inputType="text|textCapCharacters|textCapWords|textMultiLine"
-                            android:singleLine="true"/>
+                            android:singleLine="true"
+                            android:text="Net Deposit from SSPN"/>
                         <EditText
                             android:id="@+id/f10"
                             android:layout_width="match_parent"

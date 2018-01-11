@@ -29,27 +29,11 @@ public class AccountActivity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.custom_action_bar_layout);
         View view = getSupportActionBar().getCustomView();
 
-//        btnSave = (Button) findViewById(R.id.btnSave);
-//        btnSave.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                finish();
-//            }
-//        });
-//        FragmentManager fm = getSupportFragmentManager();
-//        FragmentTransaction ft = fm.beginTransaction();
-//        ft.add(R.id.fragment_layout, new FragmentAccountEdit());
-//        ft.commit();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//        ft.replace(R.id.fragment_layout, new FragmentAccountEdit());
+        ft.replace(R.id.fragment_layout, new FragmentViewProfile());
+        ft.commit();
     }
-
-//    public void selectFrag(View view){
-//        Fragment fr = new FragmentAccountEdit();
-//
-//        FragmentManager fm = getFragmentManager();
-//        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-//        fragmentTransaction.replace(R.id.fragment, new FragmentAccountEdit());
-//
-//    }
 
 
 

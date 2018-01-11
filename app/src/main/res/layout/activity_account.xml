@@ -14,17 +14,25 @@
         tools:context="com.example.kahwai.ezhasil.AccountActivity"
         android:orientation="vertical">
 
-        <fragment
-            android:name="com.example.kahwai.ezhasil.FragmentAccountEdit"
-            android:id="@+id/fragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </fragment>
-
         <FrameLayout
             android:id="@+id/fragment_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></FrameLayout>
+            android:layout_height="match_parent">
+        </FrameLayout>
+
+        <!--<fragment-->
+            <!--android:name="com.example.kahwai.ezhasil.FragmentAccountEdit"-->
+            <!--android:id="@+id/updateProfileFragment"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content">-->
+        <!--</fragment>-->
+
+        <!--<fragment-->
+            <!--android:id="@+id/viewProfileFragment"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content">-->
+        <!--</fragment>-->
+
     </LinearLayout>
 
 </ScrollView>
