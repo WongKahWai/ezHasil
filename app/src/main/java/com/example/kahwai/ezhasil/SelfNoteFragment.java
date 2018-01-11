@@ -135,6 +135,8 @@ public class SelfNoteFragment extends Fragment {
         if(!path.exists()){
             path.createNewFile();
         }
+
+        myFile = path;
         Date date = new Date() ;
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(date);
 
@@ -154,7 +156,7 @@ public class SelfNoteFragment extends Fragment {
             Log.e("Ex==",""+e.toString());
         }
 
-        //viewPdf();
+        viewPdf();
     }
 
     private void viewPdf(){

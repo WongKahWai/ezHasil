@@ -11,14 +11,20 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ValueEventListener;
 
 public class MenuActivity extends AppCompatActivity {
 
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
+    private FirebaseDatabase db;
     private Button btnSignOut;
     private TextView btn1,btn2,btn3,btn4,btn5,btn6;
     @Override
@@ -31,10 +37,15 @@ public class MenuActivity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.custom_action_bar_layout);
         View view = getSupportActionBar().getCustomView();
 
+        final TextView user_name = (TextView)findViewById(R.id.user_name);
+        final TextView income_tax_id = (TextView)findViewById(R.id.user_profile_short_bio);
+
         auth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
 
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference ref = db.getReference().child("Users").child(EncodeString(user.getEmail())).child("Profile");
 
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -49,8 +60,22 @@ public class MenuActivity extends AppCompatActivity {
             }
         };
 
-        TextView user_name = (TextView)findViewById(R.id.user_name);
-        user_name.setText(user.getEmail());
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String name =  dataSnapshot.child("name").getValue(String.class);
+                String income_tax_no =  dataSnapshot.child("incomeTaxNo").getValue(String.class);
+                user_name.setText(name);
+                income_tax_id.setText("Income Tax No : " + income_tax_no);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
+
+
 
         btnSignOut = (Button) findViewById(R.id.btnSignOut);
         btnSignOut.setOnClickListener(new View.OnClickListener() {
@@ -130,5 +155,13 @@ public class MenuActivity extends AppCompatActivity {
        if (authListener != null) {
             auth.removeAuthStateListener(authListener);
         }
+    }
+
+    public static String EncodeString(String string) {
+        return string.replace(".", ",");
+    }
+
+    public static String DecodeString(String string) {
+        return string.replace(",", ".");
     }
 }

@@ -54,7 +54,7 @@
                 android:fontFamily="@font/gothic_bold"
                 android:text="Viral Android"
                 android:textColor="#fff"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -67,7 +67,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/user_profile_photo"
-                android:text="Income Tax ID : 123456678990"
                 android:textColor="#fff"
                 android:textSize="14sp" />
 
