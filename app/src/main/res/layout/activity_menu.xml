@@ -174,8 +174,9 @@
                     android:drawableTop="@drawable/chatbot"
                     android:elevation="4dp"
                     android:padding="20dp"
-                    android:text="Chatbot Filing"
-                    android:textAlignment="center" />
+                    android:text="Chatbot Filing     (Coming Soon)"
+                    android:textAlignment="center"
+                    android:enabled="false"/>
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
