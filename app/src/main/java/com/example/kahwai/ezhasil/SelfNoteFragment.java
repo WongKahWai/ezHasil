@@ -28,6 +28,8 @@ import java.io.OutputStreamWriter;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Map;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -141,9 +143,9 @@ public class SelfNoteFragment extends Fragment {
             PdfReader reader = new PdfReader(getResources().openRawResource(R.raw.form_be2016));
             PdfStamper stamper = new PdfStamper(reader, output);
             AcroFields acroFields = stamper.getAcroFields();
+            acroFields.setField("B1", String.valueOf(income_tax.getIntb1()));
             acroFields.setField("D2", user.getEmail().toString());
             acroFields.setField("D1a", user_data.getHomePhoneNo().toString());
-            acroFields.setField("B1", String.valueOf(income_tax.getIntb1()));
 
             stamper.setFormFlattening(true);
             stamper.close();
