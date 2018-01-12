@@ -125,11 +125,12 @@ public class MenuActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (income_tax.getSubmit_status().equals("Submitted")) {
+                if (!income_tax.getSubmit_status().equals("Submitted")) {
+                    startActivity(new Intent(MenuActivity.this, Manual_eBE.class));
+
+                }else {
                     Toast.makeText(getApplicationContext(), "You have already submitted your form!", Toast.LENGTH_SHORT).show();
                     return;
-                }else {
-                    startActivity(new Intent(MenuActivity.this, Manual_eBE.class));
                 }
             }
         });
