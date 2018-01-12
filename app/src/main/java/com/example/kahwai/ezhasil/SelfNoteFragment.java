@@ -152,7 +152,12 @@ public class SelfNoteFragment extends Fragment {
             acroFields.setField("passport_no", String.valueOf(user_data.getPassportNo()));
             acroFields.setField("passport_no_reg", String.valueOf(user_data.getRegisteredPassport()));
             acroFields.setField("citizen", String.valueOf(user_data.getCitizen()));
-            acroFields.setField("sex", String.valueOf(user_data.getSex()));
+            if(String.valueOf(user_data.getSex()).equals("Male")){
+                acroFields.setField("sex", "1");
+            }else{
+                acroFields.setField("sex", "2");
+            }
+
             acroFields.setField("date_of_birth", String.valueOf(user_data.getDob()));
             acroFields.setField("marital_status", String.valueOf(income_tax.getStra4()));
             acroFields.setField("date_of_marriage", String.valueOf(income_tax.getStra5()));
@@ -185,8 +190,13 @@ public class SelfNoteFragment extends Fragment {
             acroFields.setField("B17", String.valueOf(income_tax.getIntb17()));
             acroFields.setField("B18", String.valueOf(income_tax.getIntb18()));
             acroFields.setField("B19", String.valueOf(income_tax.getIntb19()));
+            if(income_tax.isRefundable()) {
+                acroFields.setField("refundable", "X");
+            }
             acroFields.setField("declaration_name", String.valueOf(user_data.getName()));
             acroFields.setField("ic_passport", String.valueOf(user_data.getIcNo()));
+            acroFields.setField("date_declared", String.valueOf(income_tax.getSubmit_date()));
+            acroFields.setField("date", String.valueOf(income_tax.getSubmit_date()));
             acroFields.setField("C1", String.valueOf(income_tax.getStrc1()));
             acroFields.setField("C2", String.valueOf(income_tax.getStrc2()));
             acroFields.setField("C3", String.valueOf(income_tax.getStrc3()));
@@ -207,7 +217,7 @@ public class SelfNoteFragment extends Fragment {
             acroFields.setField("E2a", String.valueOf(income_tax.getStre2a()));
             acroFields.setField("E2b", String.valueOf(income_tax.getStre2b()));
             acroFields.setField("E2c", String.valueOf(income_tax.getStre2c()));
-            acroFields.setField("F2a", String.valueOf(income_tax.getIntf2()));
+            acroFields.setField("F2a", String.valueOf(income_tax.getIntf2a()));
             acroFields.setField("F2", String.valueOf(income_tax.getIntf2()));
             acroFields.setField("F3", String.valueOf(income_tax.getIntf3()));
             acroFields.setField("F4", String.valueOf(income_tax.getIntf4()));
