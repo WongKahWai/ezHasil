@@ -36,34 +36,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chg_yr_pw_id" />
 
-    <TextView
-        android:id="@+id/oldpw_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/gothic_bold"
-        android:text="Please key in your old password"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chg_yr_pw2_id" />
-
-    <EditText
-        android:id="@+id/oldpw"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/textbox_email"
-        android:fontFamily="@font/gothic"
-        android:maxLines="1"
-        android:paddingLeft="10dp"
-        android:singleLine="true"
-        app:layout_constraintTop_toBottomOf="@+id/oldpw_id"/>
 
     <TextView
         android:id="@+id/newpw_id"
@@ -79,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/oldpw" />
+        app:layout_constraintTop_toBottomOf="@+id/chg_yr_pw2_id" />
 
     <EditText
         android:id="@+id/newpw"
@@ -91,6 +64,7 @@
         android:fontFamily="@font/gothic"
         android:maxLines="1"
         android:paddingLeft="10dp"
+        android:inputType="textPassword"
         android:singleLine="true"
         app:layout_constraintTop_toBottomOf="@+id/newpw_id"/>
 
@@ -117,6 +91,7 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/textbox_email"
         android:fontFamily="@font/gothic"
+        android:inputType="textPassword"
         android:maxLines="1"
         android:paddingLeft="10dp"
         android:singleLine="true"
