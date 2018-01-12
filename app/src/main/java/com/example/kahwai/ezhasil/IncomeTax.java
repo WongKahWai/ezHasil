@@ -253,7 +253,7 @@ public class IncomeTax {
     }
 
     public double getIntb11b_2() {
-        return intb11b_2*100;
+        return intb11b_2;
     }
 
     public double getIntb11a() {

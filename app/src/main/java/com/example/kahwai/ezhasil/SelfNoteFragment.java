@@ -176,7 +176,7 @@ public class SelfNoteFragment extends Fragment {
             acroFields.setField("B11a", String.valueOf(income_tax.getIntb11a()));
             acroFields.setField("B11b", String.valueOf(income_tax.getIntb11b()));
             acroFields.setField("B11b1", String.valueOf(income_tax.getIntb11b_1()));
-            acroFields.setField("B11bRate", String.valueOf(income_tax.getIntb11b_2())); //need to convert to percent
+            acroFields.setField("B11bRate", String.valueOf(income_tax.getIntb11b_2()*100)); //need to convert to percent
             acroFields.setField("B12", String.valueOf(income_tax.getIntb12()));
             acroFields.setField("B13", String.valueOf(income_tax.getIntb13()));
             acroFields.setField("B13a", String.valueOf(income_tax.getIntb13a()));
@@ -218,6 +218,17 @@ public class SelfNoteFragment extends Fragment {
             acroFields.setField("E2b", String.valueOf(income_tax.getStre2b()));
             acroFields.setField("E2c", String.valueOf(income_tax.getStre2c()));
             acroFields.setField("F2a", String.valueOf(income_tax.getIntf2a()));
+
+            if(!String.valueOf(income_tax.getIntf2b_ia()).equals("0")) {
+                acroFields.setField("F2b_ia", String.valueOf(income_tax.getIntf2b_ia()));
+                acroFields.setField("F2b_a", String.valueOf(income_tax.getIntf2b_b()));
+                acroFields.setField("F2b_ic", String.valueOf(income_tax.getIntf2b_ic()));
+            }
+            if(!String.valueOf(income_tax.getIntf2b_iia()).equals("0")) {
+                acroFields.setField("F2b_iia", String.valueOf(income_tax.getIntf2b_iia()));
+                acroFields.setField("F2b_b", String.valueOf(income_tax.getIntf2b_b()));
+                acroFields.setField("F2b_iic", String.valueOf(income_tax.getIntf2b_iic()));
+            }
             acroFields.setField("F2", String.valueOf(income_tax.getIntf2()));
             acroFields.setField("F3", String.valueOf(income_tax.getIntf3()));
             acroFields.setField("F4", String.valueOf(income_tax.getIntf4()));
