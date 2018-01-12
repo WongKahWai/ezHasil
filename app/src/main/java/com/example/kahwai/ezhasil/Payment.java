@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.*;
@@ -20,6 +21,13 @@ import com.braintreepayments.api.dropin.*;
 import com.braintreepayments.api.interfaces.HttpResponseCallback;
 import com.braintreepayments.api.internal.HttpClient;
 import com.braintreepayments.api.models.PaymentMethodNonce;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,12 +37,16 @@ public class Payment extends AppCompatActivity {
     final int REQUEST_CODE = 1;
     final String get_token = "http://192.168.43.84/BraintreePayments/main.php";
     final String send_payment_details = "http://192.168.43.84/BraintreePayments/mycheckout.php";
-    String token, amount;
+    String token;
     HashMap<String, String> paramHash;
 
     Button btnPay;
-    EditText etAmount;
+    TextView tvPayAmount, tvMessage;
     LinearLayout llHolder;
+
+    DatabaseReference mDatabase;
+    IncomeTax incomeTax;
+    String amount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,17 +59,37 @@ public class Payment extends AppCompatActivity {
         View view = getSupportActionBar().getCustomView();
 
         llHolder = (LinearLayout) findViewById(R.id.llHolder);
-        etAmount = (EditText) findViewById(R.id.etPrice);
         btnPay = (Button) findViewById(R.id.btnPay);
+        tvPayAmount = (TextView)findViewById(R.id.tv_payAmount);
+        tvMessage = (TextView)findViewById(R.id.tvMessage);
+
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                incomeTax = dataSnapshot.child("Users").child(EncodeString(user.getEmail())).child("IncomeTax").getValue(IncomeTax.class);
+
+                amount = String.valueOf(incomeTax.getIntb19());
+                tvPayAmount.setText("RM " + amount);
+
+                if(incomeTax.isRefundable()) {
+                    tvMessage.setText("You can refund a total of");
+                    btnPay.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
 
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("mytag","Testing");
-                if (etAmount.getText().toString().matches(""))
-                    Toast.makeText(Payment.this, "Please enter a valid amount.", Toast.LENGTH_SHORT).show();
-                else
-                    onBraintreeSubmit();
+                onBraintreeSubmit();
             }
         });
         new HttpRequest().execute();
@@ -74,7 +106,7 @@ public class Payment extends AppCompatActivity {
                 // Send payment price with the nonce
                 // use the result to update your UI and send the payment method nonce to your server
 
-                amount = etAmount.getText().toString();
+                //amount = etAmount.getText().toString();
                     paramHash = new HashMap<>();
                     paramHash.put("amount", amount);
                     paramHash.put("nonce", stringNonce);
@@ -107,6 +139,8 @@ public class Payment extends AppCompatActivity {
                     public void onResponse(String response) {
                         if (response.contains("Successful")) {
                             Toast.makeText(Payment.this, "Transaction successful", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(Payment.this, MenuActivity.class));
+
                         } else
                             Toast.makeText(Payment.this, "Transaction failed", Toast.LENGTH_LONG).show();
                         Log.d("mylog", "Final Response: " + response.toString());
@@ -164,7 +198,7 @@ public class Payment extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(Payment.this, "Successfully got token", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(Payment.this, "Successfully got token", Toast.LENGTH_SHORT).show();
                             llHolder.setVisibility(View.VISIBLE);
                         }
                     });
@@ -191,5 +225,10 @@ public class Payment extends AppCompatActivity {
             super.onPostExecute(o);
             progress.dismiss();
         }
+    }
+
+
+    public static String EncodeString(String string) {
+        return string.replace(".", ",");
     }
 }
