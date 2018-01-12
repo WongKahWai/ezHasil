@@ -25,11 +25,14 @@ public class Manual_eBE extends AppCompatActivity {
     ExpandableRelativeLayout expandableLayout1, expandableLayout2, expandableLayout3, expandableLayout4, expandableLayout5, expandableLayout6,expandableLayout8;
     private Button btnSubmit;
     private EditText a5,b1,b2,b3,b5,b7,b13a,b13b,b13c,b15a,b15b,b18,c1,c2,c3,c4,d5,e1a,e1b,e1c,e2a,e2b,e2c;
-    private EditText f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15a_num,f15b_num,f15c_num,f15d_num,f15e_num,f16,f17,f18,f19,g1,g2,g3;
+    private EditText f2a,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15a_num,f15b_num,f15c_num,f15d_num,f15e_num,f16,f17,f18,f19,g1,g2,g3;
+    private EditText f2b_iia,f2b_ia,f2b_b;
+
     private RadioGroup a4,a6,d6a,d6b,f15_e;
     private RadioButton rb_a4,rb_a6,rb_d6a,rb_d6b;
     private double eligibility;
     private String email;
+    private boolean refundable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +82,10 @@ public class Manual_eBE extends AppCompatActivity {
             e2b = (EditText) findViewById(R.id.e2b);
             e2c = (EditText) findViewById(R.id.e2c);
 
-            f2 = (EditText) findViewById(R.id.f2);
+            f2a = (EditText) findViewById(R.id.f2a);
+            f2b_ia =(EditText) findViewById(R.id.f2b_ia);
+            f2b_iia =(EditText) findViewById(R.id.f2b_iia);
+            f2b_b =(EditText) findViewById(R.id.f2b_b);
             f3 = (EditText) findViewById(R.id.f3);
             f4 = (EditText) findViewById(R.id.f4);
             f5 = (EditText) findViewById(R.id.f5);
@@ -147,12 +153,17 @@ public class Manual_eBE extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
 
             int intb1,intb2,intb3,intb5,intb7,intb13a,intb13b,intb13c;
-            int intf1=9000,intf2,intf3,intf4,intf5,intf6,intf7,intf8,intf9,intf10,intf11,intf12,intf13,intf14,intf15a_num,intf15b_num,intf15c_num,intf15d_num,intf15e_num,intf16,intf17,intf18,intf19,intf20;
+            int intf1=9000,intf2a,intf3,intf4,intf5,intf6,intf7,intf8,intf9,intf10,intf11,intf12,intf13,intf14,intf15a_num,intf15b_num,intf15c_num,intf15d_num,intf15e_num,intf16,intf17,intf18,intf19,intf20;
             int intb4,intb6,intb8,intb9,intb10;
+            int intf2b_iia, intf2b_ia, intf2b_b;
             double intb15a,intb15b;
             double intb13,intb15,intb18;
+            int intf2;
             double intf15a_total,intf15b_total,intf15c_total,intf15d_total,intf15e_total;
             int intf15a,intf15b,intf15c;
+            int intf2b_ic;
+            int intf2b_iic;
+            int intf2b;
             double intb11a_1,intb11b_1,intb11b_2;
             double intb11a=0,intb11b=0,intb12,intb14,intb16=0,intb17,intb19;
             String stra5,strc1,strc2,strc3,strc4,strd5,stre1a,stre1b,stre1c,stre2a,stre2b,stre2c,strg1,strg2,strg3,stra4,stra6,strd6a,strd6b;
@@ -311,17 +322,51 @@ public class Manual_eBE extends AppCompatActivity {
                 }else{
                     intb18 = Double.parseDouble(b18.getText().toString());
                 }
-
-
-
-                if(f2.getText().toString().matches("")){
-                    intf2=0;
+                if(f2a.getText().toString().matches("")){
+                    intf2a=0;
                 }else{
-                    intf2 = Integer.parseInt(f2.getText().toString());
-                    if(intf2>5000){
+                    intf2a = Integer.parseInt(f2a.getText().toString());
+                    if(intf2a>5000){
+                        intf2a=5000;
                         intf2=5000;
                     }
                 }
+                if(f2b_b.getText().toString().matches("")){
+                    intf2b_b=0;
+                }else{
+                    intf2b_b = Integer.parseInt(f2b_b.getText().toString())+1;
+
+                }
+                if(f2b_iia.getText().toString().matches("")){
+                    intf2b_iia=0;
+                    intf2b_iic=0;
+
+                }else{
+                    intf2b_iia = Integer.parseInt(f2b_iia.getText().toString());
+                    intf2b_iic = 1500/intf2b_b;
+
+                }
+                if(f2b_ia.getText().toString().matches("")){
+                    intf2b_ia=0;
+                    intf2b_ic=0;
+                }else{
+                    intf2b_ia = Integer.parseInt(f2b_ia.getText().toString());
+                    intf2b_ic = 1500/intf2b_b;
+
+                }
+                intf2b =  intf2b_ic+intf2b_iic;
+                if(intf2b>3000){
+                    intf2b=3000;
+                }
+                if(intf2a>intf2b){
+                    intf2 = intf2a;
+                }else{
+                    intf2 = intf2b;
+                }
+
+
+
+
                 if(f3.getText().toString().matches("")){
                     intf3=0;
                 }else{
@@ -596,13 +641,15 @@ public class Manual_eBE extends AppCompatActivity {
                 }
                 if(intb16>intb18){
                     intb19 = intb16-intb18;
+                    refundable=false;
                 }
                 else{
                     intb19 = intb18-intb16;
+                    refundable=true;
                 }
 
 
-                IncomeTax it = new IncomeTax(intb1, intb2, intb3, intb5, intb7, intb13a, intb13b, intb13c, intf1, intf2, intf3, intf4, intf5, intf6, intf7, intf8, intf9, intf10, intf11, intf12, intf13,  intf14, intf15a_num, intf15b_num, intf15c_num, intf15d_num,  intf15e_num, intf16, intf17, intf18, intf19, intf20, intb4, intb6, intb8, intb9, intb10, intb15a, intb15b, intb13, intb15, intb18, intf15a_total, intf15b_total, intf15c_total, intf15d_total, intf15e_total, intf15a,intf15b,  intf15c,  intb11a_1, intb11b_1,  intb11b_2,  intb11a,  intb11b,  intb12,  intb14,  intb16,  intb17, intb19, stra5, strc1, strc2, strc3,  strc4, strd5, stre1a,  stre1b, stre1c,stre2a, stre2b, stre2c,strg1,  strg2,  strg3, stra4,  stra6,  strd6a, strd6b,eligibility,"Drafted");
+                IncomeTax it = new IncomeTax(intb1, intb2, intb3, intb5, intb7, intb13a, intb13b, intb13c, intf1,intf2a, intf2b_iia, intf2b_ia, intf2b_b,intf2b_ic,intf2b_iic,intf2, intf3, intf4, intf5, intf6, intf7, intf8, intf9, intf10, intf11, intf12, intf13,  intf14, intf15a_num, intf15b_num, intf15c_num, intf15d_num,  intf15e_num, intf16, intf17, intf18, intf19, intf20, intb4, intb6, intb8, intb9, intb10, intb15a, intb15b, intb13, intb15, intb18, intf15a_total, intf15b_total, intf15c_total, intf15d_total, intf15e_total, intf15a,intf15b,  intf15c,  intb11a_1, intb11b_1,  intb11b_2,  intb11a,  intb11b,  intb12,  intb14,  intb16,  intb17, intb19, stra5, strc1, strc2, strc3,  strc4, strd5, stre1a,  stre1b, stre1c,stre2a, stre2b, stre2c,strg1,  strg2,  strg3, stra4,  stra6,  strd6a, strd6b,eligibility,"Drafted",refundable);
 
 
                 mDatabase.child("Users").child(EncodeString(email)).child("IncomeTax").setValue(it);
