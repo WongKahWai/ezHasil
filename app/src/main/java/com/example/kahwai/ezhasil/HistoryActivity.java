@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -58,8 +59,10 @@ public class HistoryActivity extends AppCompatActivity {
                 status =  dataSnapshot.child("submit_status").getValue(String.class);
                 System.out.println("1" + status);
 
-                if(status=="Submitted")
+                if(status=="Submitted"){
                     value=1;
+                }
+
 
                 modelItems[0] = new Model("Submission for BE 2016", value);
                 modelItems[0].setSubmit_status(status);
@@ -75,8 +78,11 @@ public class HistoryActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ref.child("submit_status").setValue("Submitted");
-                modelItems[0].setValue(1);
+                    Toast.makeText(getApplicationContext(), "You have submitted before!", Toast.LENGTH_SHORT).show();
+                    ref.child("submit_status").setValue("Submitted");
+                    modelItems[0].setValue(1);
+
+
 /*                Intent intent = getIntent();
                 finish();
                 startActivity(intent);*/
