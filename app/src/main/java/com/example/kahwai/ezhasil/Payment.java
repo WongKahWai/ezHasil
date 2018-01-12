@@ -28,7 +28,7 @@ public class Payment extends AppCompatActivity {
 
     final int REQUEST_CODE = 1;
     final String get_token = "http://192.168.43.84/BraintreePayments/main.php";
-    final String send_payment_details = "http://192.168.43.84/BraintreePayments/checkout.php";
+    final String send_payment_details = "http://192.168.43.84/BraintreePayments/mycheckout.php";
     String token, amount;
     HashMap<String, String> paramHash;
 
@@ -49,10 +49,15 @@ public class Payment extends AppCompatActivity {
         llHolder = (LinearLayout) findViewById(R.id.llHolder);
         etAmount = (EditText) findViewById(R.id.etPrice);
         btnPay = (Button) findViewById(R.id.btnPay);
+
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBraintreeSubmit();
+                Log.d("mytag","Testing");
+                if (etAmount.getText().toString().matches(""))
+                    Toast.makeText(Payment.this, "Please enter a valid amount.", Toast.LENGTH_SHORT).show();
+                else
+                    onBraintreeSubmit();
             }
         });
         new HttpRequest().execute();
@@ -68,14 +73,12 @@ public class Payment extends AppCompatActivity {
                 Log.d("mylog", "Result: " + stringNonce);
                 // Send payment price with the nonce
                 // use the result to update your UI and send the payment method nonce to your server
-                if (!etAmount.getText().toString().isEmpty()) {
-                    amount = etAmount.getText().toString();
+
+                amount = etAmount.getText().toString();
                     paramHash = new HashMap<>();
                     paramHash.put("amount", amount);
                     paramHash.put("nonce", stringNonce);
                     sendPaymentDetails();
-                } else
-                    Toast.makeText(Payment.this, "Please enter a valid amount.", Toast.LENGTH_SHORT).show();
 
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 // the user canceled
@@ -135,6 +138,7 @@ public class Payment extends AppCompatActivity {
             }
         };
         queue.add(stringRequest);
+        System.out.println(stringRequest);
     }
 
     private class HttpRequest extends AsyncTask {
