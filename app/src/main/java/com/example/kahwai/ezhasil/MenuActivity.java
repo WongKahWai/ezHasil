@@ -125,7 +125,10 @@ public class MenuActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!income_tax.getSubmit_status().equals("Submitted")) {
+                if(income_tax ==null){
+                    startActivity(new Intent(MenuActivity.this, Manual_eBE.class));
+                }
+                else if (!income_tax.getSubmit_status().equals("Submitted")) {
                     startActivity(new Intent(MenuActivity.this, Manual_eBE.class));
 
                 }else {
