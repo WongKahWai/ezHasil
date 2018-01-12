@@ -1,8 +1,187 @@
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kahwai.ezhasil.FragmentEditProfile">
+    android:layout_margin="10dp">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.kahwai.ezhasil.FragmentAccountEdit">
+
+        <TextView
+            android:id="@+id/report_view_select_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/gothic_bold_italic"
+            android:text="Edit Your Information"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/report_view_select_desc">
 
 
-</android.support.constraint.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic_bold"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:text="Home Phone No"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edit_home_phone"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:elevation="0dp"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_mobile_phone"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic_bold"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:text="Mobile Phone No"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edit_mobile_phone"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:elevation="0dp"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_mobile_phone"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic_bold"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:text="@string/acc_passport"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edit_passport"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_passport"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic_bold"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:text="@string/acc_registered_passport"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edit_registered_passport"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_registered_passport"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic_bold"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:text="@string/acc_bank"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edit_bank"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_bank"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic_bold"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:text="@string/acc_bank_account_no"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edit_bank_account_no"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox_email"
+                android:fontFamily="@font/gothic"
+                android:hint="@string/acc_bank_account_no"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:inputType="number"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/edit_btnSave"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/amberDark"
+                android:fontFamily="@font/gothic_bold"
+                android:text="@string/acc_btn_save"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

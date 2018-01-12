@@ -1,12 +1,14 @@
 package com.example.kahwai.ezhasil;
 
 
+import java.io.Serializable;
+
 /**
  * Created by Min on 10-Jan-18.
  */
 
 
-public class User {
+public class User implements Serializable {
     //For login purpose
     public String email;
 

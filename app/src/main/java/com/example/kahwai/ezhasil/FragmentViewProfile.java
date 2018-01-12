@@ -25,6 +25,8 @@ public class FragmentViewProfile extends Fragment {
     private DatabaseReference mDatabase;
     private View rootView;
 
+    FragmentEditProfile fragmentEditProfile = new FragmentEditProfile();
+
     private TextView tvName, tvIcNo, tvGender, tvEmail, tvMobile, tvHome, tvIncomeTax, tvPassport, tvRegistered, tvBank, tvBankAccount, tvEdit;
 
     private String emailUser;
@@ -50,9 +52,8 @@ public class FragmentViewProfile extends Fragment {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment_layout, new FragmentAccountEdit());
+                ft.replace(R.id.fragment_layout,fragmentEditProfile );
                 ft.commit();
-
                 return true;
             }
         });
@@ -79,6 +80,10 @@ public class FragmentViewProfile extends Fragment {
                 tvRegistered.setText(user.getRegisteredPassport());
                 tvBank.setText(user.getBankName());
                 tvBankAccount.setText(user.getBankAccountNo());
+
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("user",user);
+                fragmentEditProfile.setArguments(bundle);
             }
 
             @Override
