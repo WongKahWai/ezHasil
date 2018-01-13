@@ -631,6 +631,9 @@ public class Manual_eBE extends AppCompatActivity {
 
                 intb12 = intb11a+intb11b;
                 intb14 = intb12 - intb13;
+                if(intb14<0){
+                    intb14=0;
+                }
                 if(intb14>intb15) {
                     intb16 = intb14 - intb15;
                     intb17 = 0;
